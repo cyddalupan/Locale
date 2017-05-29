@@ -15,5 +15,9 @@ app.config(function($routeProvider) {
 		.when('/contact', {
 			templateUrl : 'app/contact/contact.html',
 			controller  : 'contactController'
+		})
+		.when('/cyd_test', {
+			templateUrl : 'app/cyd_test/cyd_test.html',
+			controller  : 'cydTestController'
 		});
 });

@@ -7,7 +7,7 @@
 	* create a route
 	* create folder on app
 	* create html css and js file
-	* include controller and css from index.html
+	* include js and css from index.html
 	* add js controller code
 ```
 //sample controller code
