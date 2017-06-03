@@ -1,4 +1,4 @@
-app.controller('cydTestController', function($scope,$http) {
+app.controller('cydTestController', function($scope,$http,$cookies) {
 	
 	$scope.Status = 'Test Started';
 	$scope.atr = [];
@@ -47,7 +47,6 @@ app.controller('cydTestController', function($scope,$http) {
 		});
 	}
 
-
 	$scope.wrong_password_test = function(){
 		//count test
 		$scope.testCount++;
@@ -77,11 +76,55 @@ app.controller('cydTestController', function($scope,$http) {
 				result: testR,
 			};
 			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.super_admin_login();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
 			console.log(response);
+		});
+	}
+
+	$scope.super_admin_login = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'login',
+			data:{
+				'username':'user_2',
+				'password':'12345'
+			}
+		}).then(function successCallback(response) {
+
+			//Put this info when user is logged
+			$cookies.put('user_id',response.data.user_id);
+			$cookies.put('user_type_id',response.data.user_type_id);
+			$cookies.put('hash',response.data.hash);
+			$cookies.put('fullname',response.data.fullname);
+			$cookies.put('img',response.data.img);
+
+			//manage result
+			if(response.data.message == 'User Logged'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Super Admin Login',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
 
 			//call next test
 		}, function errorCallback(response) {
-
 			$scope.FailedCount++;
 			console.log(response);
 		});
