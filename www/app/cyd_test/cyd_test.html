@@ -1,3 +1,49 @@
-<h1>Test Mode</h1>
-<p>Test Result</p>
-<p>{{run_test}}</p>
+<div class="alert alert-info" role="alert">{{Status}}</div>
+<br>
+<div class="row">
+	<div class="col-md-4">
+		<table class="table">
+			<tr>
+				<th>
+					Test Count:
+				</th>
+				<td>
+					{{testCount}}
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Success Count:
+				</th>
+				<td>
+					{{SuccessCount}}
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Failed Count:
+				</th>
+				<td>
+					{{FailedCount}}
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md-6 col-lg-4" ng-repeat="test_res in atr">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				{{test_res.Title}}
+			</div>
+			<div class="panel-body">
+				{{test_res.SampOutput}}
+			</div>
+			<div class="panel-footer">
+				{{test_res.result}}
+			</div>
+		</div>
+	</div>
+</div>
