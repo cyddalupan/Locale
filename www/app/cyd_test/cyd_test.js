@@ -140,6 +140,8 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			method: 'POST',
 			url: api_url+'create_category',
 			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
 				'name':'test_category'
 			}
 		}).then(function successCallback(response) {
