@@ -244,6 +244,47 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.same_category_should_fail(category_id);
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.same_category_should_fail = function(category_id){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_category',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'name':'test_category_edited'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.message.name[0] == 'The name has already been taken.'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Same Category name should fail',
+				SampOutput: response.data.message.name[0],
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			//$scope.update_category(response.data.category_id);
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
 			console.log(response);
