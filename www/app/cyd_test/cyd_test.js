@@ -124,6 +124,48 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.insert_category_wrong_hash();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.insert_category_wrong_hash = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_category',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':'incorrecthash',
+				'name':'test_category'
+			}
+		}).then(function successCallback(response) {
+
+			console.log(response);
+
+			//manage result
+			if(response.data.message == 'invalid user'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Insert category wrong hash',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
 			$scope.create_category();
 
 		}, function errorCallback(response) {
