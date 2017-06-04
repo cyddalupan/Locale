@@ -78,7 +78,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			$scope.super_admin_login();
+			$scope.admin_login();
 
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
@@ -86,7 +86,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		});
 	}
 
-	$scope.super_admin_login = function(){
+	$scope.admin_login = function(){
 		//count test
 		$scope.testCount++;
 		//run API
@@ -117,7 +117,47 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 
 			//Add to array
 			arrayText = {
-				Title: 'Super Admin Login',
+				Title: 'Admin Login',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.create_category();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.create_category = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_category',
+			data:{
+				'name':'test_category'
+			}
+		}).then(function successCallback(response) {
+
+			console.log(response);
+
+			//manage result
+			if(response.data.message == 'test_category category added.'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Create Category',
 				SampOutput: response.data.message,
 				result: testR,
 			};
