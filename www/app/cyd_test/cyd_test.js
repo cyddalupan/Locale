@@ -146,8 +146,6 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			}
 		}).then(function successCallback(response) {
 
-			console.log(response);
-
 			//manage result
 			if(response.data.message == 'invalid user'){
 				testR = "Success";
@@ -188,8 +186,6 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			}
 		}).then(function successCallback(response) {
 
-			console.log(response);
-
 			//manage result
 			if(response.data.message == 'test_category category added.'){
 				testR = "Success";
@@ -202,6 +198,46 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			//Add to array
 			arrayText = {
 				Title: 'Create Category',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.update_category(response.data.category_id);
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.update_category = function(category_id){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'update_category',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'category_id':category_id,
+				'name':'test_category_edited'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.message == 'test_category_edited category updated.'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Update Category',
 				SampOutput: response.data.message,
 				result: testR,
 			};
