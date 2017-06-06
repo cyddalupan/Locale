@@ -323,6 +323,44 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.logout_admin();
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.logout_admin = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'logout'
+		}).then(function successCallback(response) {
+
+			//delete cookie on logout
+			$cookies.remove('user_i');
+			$cookies.remove('hash');
+
+			//manage result
+			if(response.data.message == 'User Logout.'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Logout Admin User',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
 			//$scope.update_category(response.data.category_id);
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
@@ -332,5 +370,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 	
 	//run first test
 	$scope.wrong_username_test();
+	//start from host account
+	//create new function that starts login host
 
 });
