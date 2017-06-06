@@ -284,6 +284,45 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.delete_category(category_id);
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.delete_category = function(category_id){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'delete_category',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'category_id':category_id
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.message == 'category test_category_edited deleted.'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Delete category',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
 			//$scope.update_category(response.data.category_id);
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
