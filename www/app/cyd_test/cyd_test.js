@@ -361,7 +361,53 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			//$scope.update_category(response.data.category_id);
+			$scope.login_host_user();
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.login_host_user = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'login',
+			data:{
+				'username':'user_3',
+				'password':'12345'
+			}
+		}).then(function successCallback(response) {
+
+			//Put this info when user is logged
+			$cookies.put('user_id',response.data.user_id);
+			$cookies.put('user_type_id',response.data.user_type_id);
+			$cookies.put('hash',response.data.hash);
+			$cookies.put('fullname',response.data.fullname);
+			$cookies.put('img',response.data.img);
+
+			//manage result
+			if(response.data.message == 'User Logged'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Login host user',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			//$scope.insert_category_wrong_hash();
+
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
 			console.log(response);
