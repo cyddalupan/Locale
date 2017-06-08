@@ -185,8 +185,6 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			}
 		}).then(function successCallback(response) {
 
-			console.log(response);
-			
 			//manage result
 			if(response.data.result == 'success'){
 				testR = "Success";
@@ -446,6 +444,46 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.host_should_fail_creating_category();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.host_should_fail_creating_category = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_category',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'name':'test_category'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.message == 'invalid user'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Host should fail creating category.',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
 			//$scope.insert_category_wrong_hash();
 
 		}, function errorCallback(response) {
@@ -454,9 +492,9 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		});
 	}
 	
-	//run first test
-	$scope.wrong_username_test();
-	//start from host account
-	//create new function that starts login host
+//run first test
+	//$scope.wrong_username_test();
+//start from host account
+	$scope.login_host_user();
 
 });
