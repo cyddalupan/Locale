@@ -7,6 +7,9 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 	$scope.SuccessCount = 0;
 	$scope.FailedCount = 0;
 
+	//current date
+	$scope.currdate = new Date().getTime();
+
 	$scope.login_super_admin = function(){
 		//count test
 		$scope.testCount++;
@@ -66,6 +69,93 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			}
 		}).then(function successCallback(response) {
 
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Get all admin',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.create_admin_wrong_password_confirmation();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.create_admin_wrong_password_confirmation = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_admin',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'username':'admin_'+$scope.currdate,
+				'password':'12345',
+				'password_confirmation':'123456',
+				'fullname':'sample full name',
+				'email':'sample_email_'+$scope.currdate+'@gmail.com',
+				'img':'api/public/seed/user/5.jpg'
+			}
+		}).then(function successCallback(response) {
+
+			console.log(response);
+
+			//manage result
+			if(response.data.result == 'failed'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Create an admin with wrong password confirmation',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			//$scope.insert_category_wrong_hash();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.get_user = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'get_user',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'get_user_id':5,
+			}
+		}).then(function successCallback(response) {
+
 			console.log(response);
 
 			//manage result
@@ -79,7 +169,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 
 			//Add to array
 			arrayText = {
-				Title: 'Get all admin',
+				Title: 'Get one user only',
 				SampOutput: response.data.message,
 				result: testR,
 			};
