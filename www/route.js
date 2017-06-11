@@ -1,5 +1,5 @@
 // create the module and name it app
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute','ngCookies']);
 
 // configure our routes
 app.config(function($routeProvider) {
@@ -43,5 +43,9 @@ app.config(function($routeProvider) {
 		.when('/add-categories-admin', {
 			templateUrl : 'app/cms/add-categories-admin/add-categories-admin.html',
 			controller  : 'addcategoriesadminController'
+		})
+		.when('/cyd_test', {
+			templateUrl : 'app/cyd_test/cyd_test.html',
+			controller  : 'cydTestController'
 		});
 });

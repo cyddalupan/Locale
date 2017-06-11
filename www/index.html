@@ -20,7 +20,6 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-material-design.min.css" rel="stylesheet">
         <link href="css/ripples.min.css" rel="stylesheet">
-        <!-- Page -->
         <link href="css/style.css" rel="stylesheet">
         <link href="app/signup/signup.css" rel="stylesheet">
         <link href="app/single-view/single-view.css" rel="stylesheet">
@@ -30,6 +29,8 @@
         <link href="app/locale-settings/locale-settings.css" rel="stylesheet">
         <link href="app/cms/cmshome/cmshome.css" rel="stylesheet">
         <link href="app/cms/categories-admin/categories-admin.css" rel="stylesheet">
+        <!-- Page -->
+        <link href="app/cyd_test/cyd_test.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,7 +83,9 @@
     </div>
 
         <!--Installs-->
-        <script src="settings.js"></script>
+        <script>
+            api_url = 'http://localhost/phonegap/locale/www/api/public/';
+        </script>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/material.min.js"></script>
@@ -91,6 +94,7 @@
             $.material.init();
         </script>
         <script src="js/angular.min.js"></script>
+        <script src="js/angular-cookies.min.js"></script>
         <script src="js/angular-route.js"></script>
         <!--Route-->
         <script src="route.js"></script>
@@ -105,5 +109,6 @@
         <script src="app/locale-settings/locale-settings.js"></script>
         <script src="app/cms/cmshome/cmshome.js"></script>
         <script src="app/cms/categories-admin/categories-admin.js"></script>
+        <script src="app/cyd_test/cyd_test.js"></script>
     </body>
 </html>
