@@ -1,0 +1,40 @@
+.category-titlebar {
+    position: relative;
+    height: 58px;
+    width: 100%;
+    background-color: rgba(48, 48, 48, 0.7)
+}
+.category-titlebar h2{
+    font-size: 22px;
+    margin-top: 14px;
+}
+.add-category-admin{
+    padding: 0px;
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 10px;
+}
+.add-category-admin h5{
+    font-size: 9px;
+    white-space: nowrap;
+    margin-top: 13px;
+    margin:10px 0px 0px auto !important;
+    text-align: center;
+    display: block;
+}
+.add-category-admin i{
+    margin:0px auto !important;
+    font-size: 30px;
+    margin-top: 13px;
+    text-align: center;
+    display: block;
+}
+.category-admin a{
+    margin: 5px 0px 5px 0px !important;
+}
+.category-admin{
+    padding: 0px 0px;
+    position: relative;
+    margin: 0px 10px 0px -20px !important;
+}

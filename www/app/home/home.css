@@ -1,0 +1,65 @@
+.locale-home-shell {
+	position: relative;
+	padding: 0px !important;
+	margin: 0px !important;
+	display: block;
+	right: 0px;
+	left: 0px;
+	overflow: scroll;
+	min-width: 100%;
+}
+.modified-row-locale {
+	padding: 0px !important;
+	margin: 0px !important;
+}
+.locale-square-list {
+  background: #000;
+	border: 1px solid #fff;
+	margin: 0px;
+	padding: 0px;
+}
+.locale-square-list:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.locale-square-list-2 {
+  background: #000;
+	border: 1px solid #fff;
+	float: right;
+	padding: 0px !important;
+	margin: 0px !important;
+}
+.locale-square-list-2:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.locale-square-list-3 {
+  background: #000;
+	border: 1px solid #fff;
+	float: left;
+	padding: 0px !important;
+	margin: 0px !important;
+}
+.locale-square-list-3:after {
+  content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.locale-square-list-4 {
+  background: #000;
+	border: 1px solid #fff;
+	margin: 0px;
+	padding: 0px;
+}
+.locale-square-list-4:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.modified-row-locale a img{
+	position:absolute;
+	height: 100%;
+	width: 100%
+}
