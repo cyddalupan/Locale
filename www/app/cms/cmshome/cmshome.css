@@ -1,0 +1,22 @@
+.locale-home-menu {
+	border-radius: 50px;
+	border: 5px solid #fff;
+	margin: 17px 0px 17px 12vw;
+	position: relative;
+  	height: 34vw;
+}
+.locale-home-menu:after {
+  	content: "";
+  	display: block;
+  	padding-bottom: 100%;
+}
+.locale-home-menu p {
+	color: #fff;
+	text-align: center;
+	font-size: 6vw;
+	padding-top: 11.4vw;
+	position: absolute;
+	width: 100%;
+    left: 0;
+    font-weight: bold;
+}

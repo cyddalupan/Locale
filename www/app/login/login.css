@@ -1,0 +1,107 @@
+.locale-login-blur{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    /* background: url("../../img/locale-bg.jpg")*/
+}
+.locale-login{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: block;
+}
+.locale-login-header {
+    text-align: center;
+    font-size: 62px;
+    display: block;
+    margin-top: 10px;
+}
+.locale-logo-login img {
+    height: 180px;
+    width: 180px;
+    display: block;
+    margin: 30px auto;
+}
+.locale-logo-login{
+    margin: auto;
+}
+.username-locale-shell{
+    background: rgba(0, 0, 0, 0);
+    position: relative;
+    margin: 0.5em auto;
+    padding: 0px;
+    height: 27px;
+    width: 70%;
+    border: 3px solid #fff;
+    border-radius: 30px;
+}
+.username-locale {
+    background: none;
+    padding: 0 3px;
+    border:0;
+    width: 100%;
+    font-size: 10px;
+    min-height: 100%;
+}
+.locale-login-button {
+    font-size: 15px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 3px solid #fff;
+    margin-left: 20%;
+    margin-right: auto;
+}
+.locale-signup-button {
+    font-size: 15px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 3px solid #fff;
+    margin-left: 10%;
+    margin-right: auto;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.locale-login a{
+    margin: auto;
+}
+.circle-inner-login h4 {
+    font-size: 17px;
+}
+.circle-inner-login{
+}
+.responsive-circle-login {
+    margin-top: 30px !important;
+    top: 15px;
+    left: 15px;
+    font-size: 80px;
+    font-weight: 700;
+    margin: auto;
+    width: 160px;
+}
+.responsive-circle-login::after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 0;
+    margin-bottom: 20px;
+    padding-bottom: 100%;
+    width: 100%;
+    border: 3px solid #fff;
+}
+.responsive-circle-login div {
+    color:#fff;
+    float: left;
+    line-height: 1em;
+    margin-top: -0.5em;
+    padding-top: 40%;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+}

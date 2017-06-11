@@ -22,8 +22,6 @@
         <link href="css/ripples.min.css" rel="stylesheet">
         <!-- Page -->
         <link href="css/style.css" rel="stylesheet">
-        <link href="app/signup/signup.css" rel="stylesheet">
-        <link href="app/single-view/single-view.css" rel="stylesheet">
         <link href="app/login/login.css" rel="stylesheet">
         <link href="app/home/home.css" rel="stylesheet">
         <link href="app/categories/categories.css" rel="stylesheet">
@@ -39,7 +37,8 @@
         <![endif]-->
     </head>
     <body ng-controller="mainController">
-        <div class="locale-header row" ng-hide="hideNav">
+    <div class="background-handler container-fluid" >
+        <div class="locale-header row" ng-show="!state.includes('#/login')">
         <a>
             <div class="responsive-circle" ng-click="localSettings()">
                 <div class="circle-inner"><span class="glyphicon glyphicon-cog settings-icon-locale-1" aria-hidden="true" id="!locale-settings-default" ng-hide="localsettingsActive"></span><i class="fa fa-times settings-icon-locale-1" id="locale-settings-close" aria-hidden="true" ng-show="localsettingsActive"></i></div>
@@ -47,7 +46,7 @@
         </a>
             <h1>LOCALE</h1>
         </div>
-        <div class="locale-body" ng-hide="hideNav" ng-class="{'locale-blur': localsettingsActive }">
+        <div class="locale-body" ng-class="{'locale-blur': localsettingsActive }">
             <div class="search-locale-shell"><span class="glyphicon glyphicon-search search-icon-locale" aria-hidden="true"></span><input type="search" class="search-locale" id="i2" placeholder="Search" onfocus=""></div>
             <nav class="navbar navbar-locale-handler row">
                 <div class="container-fluid-custom">
@@ -60,7 +59,7 @@
                 </div><!-- /.container-fluid -->
             </nav>
         </div>
-        <div class="locale-content-view" ng-class="{'locale-blur': localsettingsActive }">
+        <div class="locale-content-view">
             <div class="container-fluid locale-content-view-2">
                 <!-- angular templating -->
                 <!-- this is where content will be injected -->
@@ -99,8 +98,6 @@
         <script src="app/home/home.js"></script>
         <script src="app/categories/categories.js"></script>
         <script src="app/contact/contact.js"></script>
-        <script src="app/single-view/single-view.js"></script>
-        <script src="app/signup/signup.js"></script>
         <script src="app/login/login.js"></script>
         <script src="app/locale-settings/locale-settings.js"></script>
         <script src="app/cms/cmshome/cmshome.js"></script>
