@@ -114,7 +114,50 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			}
 		}).then(function successCallback(response) {
 
+			//manage result
+			if(response.data.result == 'failed'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Create an admin with wrong password confirmation',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.create_admin();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
 			console.log(response);
+		});
+	}
+
+	$scope.create_admin_wrong_password_confirmation = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_admin',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'username':'admin_'+$scope.currdate,
+				'password':'12345',
+				'password_confirmation':'123456',
+				'fullname':'sample full name',
+				'email':'sample_email_'+$scope.currdate+'@gmail.com',
+				'img':'api/public/seed/user/5.jpg'
+			}
+		}).then(function successCallback(response) {
 
 			//manage result
 			if(response.data.result == 'failed'){
@@ -134,7 +177,98 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			//$scope.insert_category_wrong_hash();
+			$scope.create_admin();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.created_admin_id = 0;
+	$scope.create_admin = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_admin',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'username':'admin_'+$scope.currdate,
+				'password':'12345',
+				'password_confirmation':'12345',
+				'fullname':'sample full name',
+				'email':'sample_email_'+$scope.currdate+'@gmail.com',
+				'img' : 'api/public/seed/user/1.jpg'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Create an admin',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.created_admin_id = response.data.user.id;
+			$scope.create_admin_failed_by_same_username();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.create_admin_failed_by_same_username = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_admin',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'username':'admin_'+$scope.currdate,
+				'password':'12345',
+				'password_confirmation':'12345',
+				'fullname':'sample full name',
+				'email':'sample_email_'+$scope.currdate+'@gmail.com'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'failed'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Create an admin failed same username',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.get_user();
 
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
@@ -152,11 +286,9 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			data:{
 				'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
-				'get_user_id':5,
+				'get_user_id':$scope.created_admin_id,
 			}
 		}).then(function successCallback(response) {
-
-			console.log(response);
 
 			//manage result
 			if(response.data.result == 'success'){
@@ -176,8 +308,130 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			//$scope.insert_category_wrong_hash();
+			$scope.edit_admin();
 
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.edit_admin = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'edit_user',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'get_user_id':$scope.created_admin_id,
+				'username':'admin_'+$scope.currdate,
+				'fullname':'sample full name edited',
+				'email':'sample_email_edited'+$scope.currdate+'@gmail.com',
+				'img' : 'api/public/seed/user/1.jpg'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Edit Admin',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.delete_admin();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.delete_admin = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'delete_user',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'get_user_id':$scope.created_admin_id
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Delete admin',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.logout_super_admin();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.logout_super_admin = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'logout'
+		}).then(function successCallback(response) {
+
+			//delete cookie on logout
+			$cookies.remove('user_id');
+			$cookies.remove('hash');
+
+			//manage result
+			if(response.data.message == 'User Logout.'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Logout Super Admin User',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.wrong_username_test();
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
 			console.log(response);
@@ -198,7 +452,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		}).then(function successCallback(response) {
 
 			//manage result
-			if(response.data.message.username[0] == 'The selected username is invalid.'){
+			if(response.data.message == 'The selected username is invalid.'){
 				testR = "Success";
 				$scope.SuccessCount++;
 			}else{
@@ -209,7 +463,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			//Add to array
 			arrayText = {
 				Title: 'Login. Wrong Username Test',
-				SampOutput: response.data.message.username[0],
+				SampOutput: response.data,
 				result: testR,
 			};
 			$scope.atr.push(arrayText);
@@ -238,7 +492,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		}).then(function successCallback(response) {
 
 			//manage result
-			if(response.data.message.password[0] == 'Password incorrect.'){
+			if(response.data.message == 'Password incorrect.'){
 				testR = "Success";
 				$scope.SuccessCount++;
 			}else{
@@ -249,7 +503,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			//Add to array
 			arrayText = {
 				Title: 'Login. Wrong Username Test',
-				SampOutput: response.data.message.password[0],
+				SampOutput: response.data.message,
 				result: testR,
 			};
 			$scope.atr.push(arrayText);
@@ -397,12 +651,12 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			data:{
 				'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
-				'name':'test_category'
+				'name':'test_category'+$scope.currdate
 			}
 		}).then(function successCallback(response) {
 
 			//manage result
-			if(response.data.message == 'test_category category added.'){
+			if(response.data.message == 'test_category'+$scope.currdate+' category added.'){
 				testR = "Success";
 				$scope.SuccessCount++;
 			}else{
@@ -419,7 +673,46 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			$scope.update_category(response.data.category_id);
+			$scope.get_category(response.data.category_id);
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.get_category = function(category_id){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'get_category',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'category_id':category_id
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Get Single Category',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.update_category(category_id);
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
 			console.log(response);
@@ -437,12 +730,12 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 				'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
 				'category_id':category_id,
-				'name':'test_category_edited'
+				'name':'test_category_edited'+$scope.currdate
 			}
 		}).then(function successCallback(response) {
 
 			//manage result
-			if(response.data.message == 'test_category_edited category updated.'){
+			if(response.data.message == 'test_category_edited'+$scope.currdate+' category updated.'){
 				testR = "Success";
 				$scope.SuccessCount++;
 			}else{
@@ -477,12 +770,12 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			data:{
 				'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
-				'name':'test_category_edited'
+				'name':'test_category_edited'+$scope.currdate
 			}
 		}).then(function successCallback(response) {
 
 			//manage result
-			if(response.data.message.name[0] == 'The name has already been taken.'){
+			if(response.data.message == 'The name has already been taken.'){
 				testR = "Success";
 				$scope.SuccessCount++;
 			}else{
@@ -493,7 +786,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			//Add to array
 			arrayText = {
 				Title: 'Same Category name should fail',
-				SampOutput: response.data.message.name[0],
+				SampOutput: response.data.message,
 				result: testR,
 			};
 			$scope.atr.push(arrayText);
@@ -521,7 +814,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		}).then(function successCallback(response) {
 
 			//manage result
-			if(response.data.message == 'category test_category_edited deleted.'){
+			if(response.data.message == 'category test_category_edited'+$scope.currdate+' deleted.'){
 				testR = "Success";
 				$scope.SuccessCount++;
 			}else{
@@ -555,7 +848,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		}).then(function successCallback(response) {
 
 			//delete cookie on logout
-			$cookies.remove('user_i');
+			$cookies.remove('user_id');
 			$cookies.remove('hash');
 
 			//manage result
