@@ -47,5 +47,9 @@ app.config(function($routeProvider) {
 		.when('/cyd_test', {
 			templateUrl : 'app/cyd_test/cyd_test.html',
 			controller  : 'cydTestController'
+		})
+		.when('/cyd_map', {
+			templateUrl : 'app/cyd_map/cyd_map.html',
+			controller  : 'cydMapController'
 		});
 });
