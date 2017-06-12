@@ -1,5 +1,14 @@
+.cms-home-shell {
+	position: fixed;
+	display: block;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: scroll;
+}
 .locale-home-menu {
-	border-radius: 50px;
+	border-radius: 20%;
 	border: 5px solid #fff;
 	margin: 17px 0px 17px 12vw;
 	position: relative;
