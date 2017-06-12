@@ -406,7 +406,10 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		//run API
 		$http({
 			method: 'POST',
-			url: api_url+'logout'
+			url: api_url+'logout',
+			data:{
+				'user_id':$cookies.get('user_id')
+			}
 		}).then(function successCallback(response) {
 
 			//delete cookie on logout
@@ -651,7 +654,8 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			data:{
 				'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
-				'name':'test_category'+$scope.currdate
+				'name':'test_category'+$scope.currdate,
+				'img_url':'api/public/seed/user/5.jpg'
 			}
 		}).then(function successCallback(response) {
 
@@ -730,7 +734,8 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 				'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
 				'category_id':category_id,
-				'name':'test_category_edited'+$scope.currdate
+				'name':'test_category_edited'+$scope.currdate,
+				'img_url':'api/public/seed/user/5.jpg'
 			}
 		}).then(function successCallback(response) {
 
@@ -844,7 +849,10 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		//run API
 		$http({
 			method: 'POST',
-			url: api_url+'logout'
+			url: api_url+'logout',
+			data:{
+				'user_id':$cookies.get('user_id')
+			}
 		}).then(function successCallback(response) {
 
 			//delete cookie on logout
