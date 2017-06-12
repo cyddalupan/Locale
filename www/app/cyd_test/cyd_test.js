@@ -406,7 +406,10 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		//run API
 		$http({
 			method: 'POST',
-			url: api_url+'logout'
+			url: api_url+'logout',
+			data:{
+				'user_id':$cookies.get('user_id')
+			}
 		}).then(function successCallback(response) {
 
 			//delete cookie on logout
@@ -846,7 +849,10 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		//run API
 		$http({
 			method: 'POST',
-			url: api_url+'logout'
+			url: api_url+'logout',
+			data:{
+				'user_id':$cookies.get('user_id')
+			}
 		}).then(function successCallback(response) {
 
 			//delete cookie on logout
