@@ -1068,7 +1068,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		//run API
 		$http({
 			method: 'POST',
-			url: api_url+'create_host',
+			url: api_url+'edit_host',
 			data:{
 				'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
@@ -1082,7 +1082,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		}).then(function successCallback(response) {
 
 			//manage result
-			if(response.data.message == 'edited test host'+$scope.currdate+' created'){
+			if(response.data.message == 'edited test host'+$scope.currdate+' updated'){
 				testR = "Success";
 				$scope.SuccessCount++;
 			}else{
@@ -1121,10 +1121,8 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			}
 		}).then(function successCallback(response) {
 
-			console.log(response);
-
 			//manage result
-			if(response.data.message == 'get test host'+$scope.currdate+' from host'){
+			if(response.data.message == 'get edited test host'+$scope.currdate+' from host'){
 				testR = "Success";
 				$scope.SuccessCount++;
 			}else{
@@ -1135,6 +1133,45 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			//Add to array
 			arrayText = {
 				Title: 'Get single host',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.delete_host();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.delete_host = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'delete_host',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'host_id':$scope.test_host_id,
+			}
+		}).then(function successCallback(response) {
+			//manage result 
+			if(response.data.message == 'edited test host'+$scope.currdate+' deleted'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Delete host',
 				SampOutput: response.data.message,
 				result: testR,
 			};
