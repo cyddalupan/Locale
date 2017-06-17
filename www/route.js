@@ -44,9 +44,21 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/cms/add-categories-admin/add-categories-admin.html',
 			controller  : 'addcategoriesadminController'
 		})
+		.when('/edit-categories-admin/:category_id', {
+			templateUrl : 'app/cms/edit-categories-admin/edit-categories-admin.html',
+			controller  : 'editcategoriesadminController'
+		})
 		.when('/locale-admin', {
 			templateUrl : 'app/cms/locale-admin/locale-admin.html',
 			controller  : 'localeadminController'
+		})
+		.when('/add-locale-admin', {
+			templateUrl : 'app/cms/add-locale-admin/add-locale-admin.html',
+			controller  : 'addLocaleadminController'
+		})
+		.when('/locale-user', {
+			templateUrl : 'app/cms/locale-user/locale-user.html',
+			controller  : 'localeUserController'
 		})
 		.when('/cyd_test', {
 			templateUrl : 'app/cyd_test/cyd_test.html',
