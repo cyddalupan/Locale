@@ -988,8 +988,6 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			}
 		}).then(function successCallback(response) {
 
-			console.log(response);
-
 			//manage result
 			if(response.data.message == 'The name field is required.'){
 				testR = "Success";
@@ -1056,7 +1054,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			//$scope.insert_category_wrong_hash();
+			$scope.edit_host();
 
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
@@ -1095,6 +1093,48 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			//Add to array
 			arrayText = {
 				Title: 'Edit host.',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.get_single_host();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.get_single_host = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'get_host',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'host_id':$scope.test_host_id,
+			}
+		}).then(function successCallback(response) {
+
+			console.log(response);
+
+			//manage result
+			if(response.data.message == 'get test host'+$scope.currdate+' from host'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Get single host',
 				SampOutput: response.data.message,
 				result: testR,
 			};
