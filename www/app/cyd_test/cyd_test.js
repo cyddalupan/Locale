@@ -1178,6 +1178,44 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.get_all_host();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.get_all_host = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'get_all_host',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash')
+			}
+		}).then(function successCallback(response) {
+			//manage result 
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Get all host',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
 			//$scope.insert_category_wrong_hash();
 
 		}, function errorCallback(response) {
@@ -1187,9 +1225,9 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 	}
 	
 //start from super admin account
-	//$scope.login_super_admin();
+	$scope.login_super_admin();
 //start from admin account
 	//$scope.wrong_username_test();
 //start from host account
-	$scope.login_host_user();
+	//$scope.login_host_user();
 });
