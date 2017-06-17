@@ -8,41 +8,15 @@
 			</a>
 		</div>
 	</div>
-	<div class="category-admin">
-		<a class="" href="#/categories-admin">
+	<div class="category-admin" ng-repeat="category in categories">
+		<a class="">
 			<div class="responsive-circle-category-admin col-xs-6">
-				<div class="circle-inner-category-admin">
-					<img src="img/category-1.png" alt="">
-					<h4>SPORTS & RECREATION</h4>
-					<i class="fa fa-minus-circle" aria-hidden="true"></i>
+				<a href="#/edit-categories-admin/{{category.id}}"><div class="circle-inner-category-admin">
+					<img ng-src="{{category.img_url}}" alt="">
+					<h4>{{category.name}}</h4>
+					<i ng-click="deleteCategory(category.id)" class="fa fa-minus-circle" aria-hidden="true"></i>
 				</div>
-			</div>
-		</a>
-		<a class="" href="#/categories-admin">
-			<div class="responsive-circle-category-admin col-xs-6">
-				<div class="circle-inner-category-admin">
-					<img src="img/category-1.png" alt="">
-					<h4>SPORTS & RECREATION</h4>
-					<i class="fa fa-minus-circle" aria-hidden="true"></i>
-				</div>
-			</div>
-		</a>
-				<a class="" href="#/categories-admin">
-			<div class="responsive-circle-category-admin col-xs-6">
-				<div class="circle-inner-category-admin">
-					<img src="img/category-1.png" alt="">
-					<h4>SPORTS & RECREATION</h4>
-					<i class="fa fa-minus-circle" aria-hidden="true"></i>
-				</div>
-			</div>
-		</a>
-				<a class="" href="#/categories-admin">
-			<div class="responsive-circle-category-admin col-xs-6">
-				<div class="circle-inner-category-admin">
-					<img src="img/category-1.png" alt="">
-					<h4>SPORTS & RECREATION</h4>
-					<i class="fa fa-minus-circle" aria-hidden="true"></i>
-				</div>
+				</a>
 			</div>
 		</a>
 	</div>

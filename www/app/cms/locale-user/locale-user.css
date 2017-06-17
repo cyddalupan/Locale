@@ -17,6 +17,7 @@
 .locale-titlebar h2{
     font-size: 22px;
     margin-top: 14px;
+    text-align: center
 }
 .add-locale-admin{
     padding: 0px;

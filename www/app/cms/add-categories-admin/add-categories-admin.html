@@ -1,9 +1,11 @@
 <div class="add-categories-shell">
 	<div class="add-categories-titlebar row">
-		<div class="add-categories-input"><input placeholder="CATEGORY TITLE" type="text" value=""/></div>
+		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+		<div class="add-categories-input"><input placeholder="CATEGORY TITLE" type="text" value="" ng-model="name"/></div>
 	</div>
+	<h1>{{msg}}</h1>
 	<div class="add-categories-body">
-		<div class="add-categories-input"><input placeholder="CATEGORY IMAGE URL" type="text" value=""/></div>
-		<a class="ok-box"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
+		<div class="add-categories-input"><input placeholder="CATEGORY IMAGE URL" type="text" value="" ng-model="img_url"/></div>
+		<a class="ok-box" ng-click="addCategory()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 	</div>
 </div>
