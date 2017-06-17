@@ -1016,6 +1016,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 		});
 	}
 
+	$scope.test_host_id = 0;
 	$scope.create_host = function(){
 		//count test
 		$scope.testCount++;
@@ -1034,7 +1035,8 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			}
 		}).then(function successCallback(response) {
 
-			console.log(response);
+			//save test host id
+			$scope.test_host_id = response.data.host.id;
 
 			//manage result
 			if(response.data.message == 'test host'+$scope.currdate+' created'){
@@ -1048,6 +1050,51 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			//Add to array
 			arrayText = {
 				Title: 'Create host.',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			//$scope.insert_category_wrong_hash();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.edit_host = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_host',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'host_id':$scope.test_host_id,
+				'name':'edited test host'+$scope.currdate,
+				'img_url':'http://localhost/phonegap/locale/www/api/public/seed/event/7.jpg',
+				'short_description':'edited short desc tes',
+				'long_description':'edited long desc to text',
+				'google_map_embed':'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.588934923989!2d121.02531531454524!3d14.565483989824811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9073750cc15%3A0xc3a53c8ba2ae6cc0!2sCentury+City+Mall!5e0!3m2!1sen!2sph!4v1497205778482" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.message == 'edited test host'+$scope.currdate+' created'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Edit host.',
 				SampOutput: response.data.message,
 				result: testR,
 			};
