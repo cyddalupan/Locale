@@ -655,7 +655,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 				'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
 				'name':'test_category'+$scope.currdate,
-				'img_url':'api/public/seed/user/5.jpg'
+				'img_url':'http://localhost/phonegap/locale/www/api/public/seed/user/8.jpg'
 			}
 		}).then(function successCallback(response) {
 
@@ -1216,18 +1216,208 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			//$scope.insert_category_wrong_hash();
+			$scope.logout_host_user();
 
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
 			console.log(response);
 		});
 	}
+
+
+	$scope.logout_host_user = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'logout',
+			data:{
+				'user_id':$cookies.get('user_id')
+			}
+		}).then(function successCallback(response) {
+
+			//delete cookie on logout
+			$cookies.remove('user_id');
+			$cookies.remove('hash');
+
+			//manage result
+			if(response.data.message == 'User Logout.'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Logout host User',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.login_admin_to_create_event();
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+
+	$scope.login_admin_to_create_event = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'login',
+			data:{
+				'username':'user_2',
+				'password':'12345'
+			}
+		}).then(function successCallback(response) {
+
+			//Put this info when user is logged
+			$cookies.put('user_id',response.data.user_id);
+			$cookies.put('user_type_id',response.data.user_type_id);
+			$cookies.put('hash',response.data.hash);
+			$cookies.put('fullname',response.data.fullname);
+			$cookies.put('img',response.data.img);
+
+			//manage result
+			if(response.data.message == 'User Logged'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Login admin admin to create event',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.create_event_failed_date();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.test_event_id = 0;
+	$scope.create_event_failed_date = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_event',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'event_name':'test event',
+				'img_url':'http://localhost/phonegap/locale/www/api/public/seed/event/10.jpg',
+				'short_description':'short desc test',
+				'long_description':'long <strong>description</stong>',
+				'category_id':5,
+				'host_id':5,
+				'position_sort':5,
+				'event_date':'wrong date',
+				'is_featured':0
+			}
+		}).then(function successCallback(response) {
+			//manage result
+			if(response.data.message == 'The event date is not a valid date.'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Create event Failed date',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.create_event_success();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.create_event_success = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_event',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'event_name':'test event',
+				'img_url':'http://localhost/phonegap/locale/www/api/public/seed/event/10.jpg',
+				'short_description':'short desc test',
+				'long_description':'long <strong>description</stong>',
+				'category_id':5,
+				'host_id':5,
+				'position_sort':5,
+				'event_date':'2018-08-10',
+				'is_featured':0
+			}
+		}).then(function successCallback(response) {
+
+			$scope.test_event_id = response.data.event.id;
+
+			//manage result
+			if(response.data.message == 'test event created'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Create event Success',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			//$scope.edit_host();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
 	
 //start from super admin account
-	$scope.login_super_admin();
+	//$scope.login_super_admin();
 //start from admin account
 	//$scope.wrong_username_test();
 //start from host account
 	//$scope.login_host_user();
+//start from creating event
+	$scope.login_admin_to_create_event();
 });
