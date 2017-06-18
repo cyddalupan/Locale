@@ -1492,8 +1492,46 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			$scope.delete_event();
+			$scope.change_event_position();
 
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.change_event_position = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'change_position',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'event_id':$scope.test_event_id,
+				'position_sort':98
+
+			}
+		}).then(function successCallback(response) {
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+			//Add to array
+			arrayText = {
+				Title: 'Change event position',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+			//call next test
+			$scope.delete_event();
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
 			console.log(response);
@@ -1571,7 +1609,7 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			//$scope.edit_host();
+			//$scope.change_event_position();
 
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
