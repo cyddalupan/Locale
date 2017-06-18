@@ -1403,6 +1403,55 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.edit_event();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.edit_event = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'edit_event',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'event_id':$scope.test_event_id,
+				'event_name':'edited test event',
+				'img_url':'http://localhost/phonegap/locale/www/api/public/seed/event/10.jpg',
+				'short_description':'short desc test',
+				'long_description':'long <strong>description</stong>',
+				'category_id':5,
+				'host_id':5,
+				'position_sort':5,
+				'event_date':'2018-08-20',
+				'is_featured':0
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.message == 'edited test event updated'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Edit event.',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
 			//$scope.edit_host();
 
 		}, function errorCallback(response) {
