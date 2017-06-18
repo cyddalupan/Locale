@@ -1532,6 +1532,45 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.all_events();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.all_events = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'all_events',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash')
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Get all events',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
 			//$scope.edit_host();
 
 		}, function errorCallback(response) {
