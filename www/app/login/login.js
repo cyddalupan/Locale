@@ -1,4 +1,5 @@
 app.controller('apploginController', function($scope, $http, $location, $cookies) {
+   $scope.$parent.hideNav = 1;
    $scope.errormsg = '';
 
    $scope.loginS = function () {

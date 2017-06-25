@@ -1,4 +1,4 @@
-.add-locale-admin-shell {
+.edit-locale-admin-shell {
   position:fixed;
   top: 0;
   left: 0;
@@ -6,7 +6,7 @@
   bottom: 0;
   display: block;
 }
-.add-locale-admin-titlebar {
+.edit-locale-admin-titlebar {
   position:relative;
   top: 0;
   left: 0;
@@ -18,24 +18,24 @@
   padding: 0px;
   color: #fff;
 }
-.add-locale-admin-titlebar h2{
+.edit-locale-admin-titlebar h2{
   display: block;
   position: absolute;
   width: 100%;
   text-align: center;
   font-size: calc(20px + 2vw);
 }
-.add-locale-admin-input {
+.edit-locale-admin-input {
   background-color: rgba(255, 255, 255, .1);
   width: 58%;
   margin: 0px auto;
   padding: .2vw 0 0 0;
 }
-.add-locale-admin-input input:focus {
+.edit-locale-admin-input input:focus {
   outline: none;
   box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
 }
-.add-locale-admin-input input {
+.edit-locale-admin-input input {
   background: transparent !important;
   display: block;
   padding: 0px;
@@ -72,7 +72,7 @@
   outline: none;
   box-shadow: 0px 4px 0px 0px #4EA6EA, 0px 4px 0px 0px #4EA6EA;
 }
-.add-profile-image {
+.edit-profile-image {
   background-color: #fff;
   height: 16vw;
   width: 16vw;
@@ -80,13 +80,13 @@
   right: 2px;
   top: 1vw;
 }
-.add-profile-image img {
+.edit-profile-image img {
   background-color: #000;
   height: 100%;
   width: 100%;
   position: absolute;
 }
-.add-locale-admin-body {
+.edit-locale-admin-body {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -98,7 +98,7 @@
   margin: auto;
   display: block;
 }
-.add-locale-admin-body a {
+.edit-locale-admin-body a {
   font-size: 60px;
   color: rgba(174, 213, 129, 1);
   width: 100%;

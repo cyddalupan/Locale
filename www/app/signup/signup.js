@@ -1,3 +1,3 @@
 app.controller('appsignupController', function($scope, $state, $location) {
-    $scope.state = $state;
+    $scope.$parent.hideNav = 1;
 });

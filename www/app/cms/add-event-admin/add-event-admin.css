@@ -1,4 +1,4 @@
-.add-locale-admin-shell {
+.add-event-admin-shell {
   position:fixed;
   top: 0;
   left: 0;
@@ -6,7 +6,7 @@
   bottom: 0;
   display: block;
 }
-.add-locale-admin-titlebar {
+.add-event-admin-titlebar {
   position:relative;
   top: 0;
   left: 0;
@@ -18,24 +18,24 @@
   padding: 0px;
   color: #fff;
 }
-.add-locale-admin-titlebar h2{
+.add-event-admin-titlebar h2{
   display: block;
   position: absolute;
   width: 100%;
   text-align: center;
   font-size: calc(20px + 2vw);
 }
-.add-locale-admin-input {
+.add-event-admin-input {
   background-color: rgba(255, 255, 255, .1);
   width: 58%;
   margin: 0px auto;
   padding: .2vw 0 0 0;
 }
-.add-locale-admin-input input:focus {
+.add-event-admin-input input:focus {
   outline: none;
   box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
 }
-.add-locale-admin-input input {
+.add-event-admin-input input {
   background: transparent !important;
   display: block;
   padding: 0px;
@@ -86,7 +86,7 @@
   width: 100%;
   position: absolute;
 }
-.add-locale-admin-body {
+.add-event-admin-body {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -98,7 +98,7 @@
   margin: auto;
   display: block;
 }
-.add-locale-admin-body a {
+.add-event-admin-body a {
   font-size: 60px;
   color: rgba(174, 213, 129, 1);
   width: 100%;
@@ -116,4 +116,19 @@
   top: 13px;
   left: 13px;
   font-size: 30px;
+}
+
+select {
+  margin: 10px auto;
+  border: 1px solid #111;
+  background: transparent;
+  width: 58%;
+  font-size: 3.5vw;
+  border: 1px solid #ccc;
+  height: 10vw;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../../../img/dropdown.ico) 96% / 15% no-repeat #333;
+  display: block;
 }

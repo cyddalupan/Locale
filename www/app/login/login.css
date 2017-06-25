@@ -23,10 +23,10 @@
     margin-top: 10px;
 }
 .locale-logo-login img {
-    height: 180px;
-    width: 180px;
+    height:40vw;
+    width: 40vw;
     display: block;
-    margin: 30px auto;
+    margin: 5vw auto;
 }
 .locale-logo-login{
     margin: auto;
@@ -56,6 +56,7 @@
     border: 3px solid #fff;
     margin-left: 20%;
     margin-right: auto;
+    z-index: 1;
 }
 .locale-signup-button {
     font-size: 15px;
@@ -72,7 +73,7 @@
     margin: auto;
 }
 .circle-inner-login h4 {
-    font-size: 17px;
+    font-size: 4vw;
 }
 .circle-inner-login{
 }
@@ -83,7 +84,7 @@
     font-size: 80px;
     font-weight: 700;
     margin: auto;
-    width: 160px;
+    width: 40vw;
 }
 .responsive-circle-login::after {
     border-radius: 50%;
@@ -100,7 +101,7 @@
     float: left;
     line-height: 1em;
     margin-top: -0.5em;
-    padding-top: 40%;
+    padding-top: 16vw;
     text-align: center;
     width: 100%;
     font-size: 30px;

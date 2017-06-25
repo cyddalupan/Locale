@@ -1,4 +1,5 @@
 app.controller('addcategoriesadminController', function($scope, $http, $cookies, $location) {
+    $scope.$parent.hideNav = 1;
     $scope.msg = '';
     $scope.addCategory = function () {
        $http({

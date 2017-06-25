@@ -30,8 +30,13 @@
         <link href="app/cms/cmshome/cmshome.css" rel="stylesheet">
         <link href="app/cms/locale-admin/locale-admin.css" rel="stylesheet">
         <link href="app/cms/add-locale-admin/add-locale-admin.css" rel="stylesheet">
+        <link href="app/cms/edit-locale-admin/edit-locale-admin.css" rel="stylesheet">
         <link href="app/cms/locale-user/locale-user.css" rel="stylesheet">
         <link href="app/cms/categories-admin/categories-admin.css" rel="stylesheet">
+        <link href="app/cms/add-event-admin/add-event-admin.css" rel="stylesheet">
+        <link href="app/cms/add-host-admin/add-host-admin.css" rel="stylesheet">
+        <link href="app/cms/event-list-admin/event-list-admin.css" rel="stylesheet">
+        <link href="app/cms/host-admin/host-admin.css" rel="stylesheet">
         <link href="app/cms/add-categories-admin/add-categories-admin.css" rel="stylesheet">
         <link href="app/cms/edit-categories-admin/edit-categories-admin.css" rel="stylesheet">
         <!-- Page -->
@@ -48,11 +53,11 @@
     </head>
     <body ng-controller="mainController">
         <div class="locale-header row" ng-hide="hideNav">
-        <a>
-            <div class="responsive-circle" ng-click="localSettings()">
-                <div class="circle-inner"><span class="glyphicon glyphicon-cog settings-icon-locale-1" aria-hidden="true" id="!locale-settings-default" ng-hide="localsettingsActive"></span><i class="fa fa-times settings-icon-locale-1" id="locale-settings-close" aria-hidden="true" ng-show="localsettingsActive"></i></div>
-            </div>
-        </a>
+            <a>
+                <div class="responsive-circle" ng-click="localSettings()">
+                    <div class="circle-inner"><span class="glyphicon glyphicon-cog settings-icon-locale-1" aria-hidden="true" id="!locale-settings-default" ng-hide="localsettingsActive"></span><i class="fa fa-times settings-icon-locale-1" id="locale-settings-close" aria-hidden="true" ng-show="localsettingsActive"></i></div>
+                </div>
+            </a>
             <h1>LOCALE</h1>
         </div>
         <div class="locale-body" ng-hide="hideNav" ng-class="{'locale-blur': localsettingsActive }">
@@ -115,9 +120,14 @@
         <script src="app/login/login.js"></script>
         <script src="app/locale-settings/locale-settings.js"></script>
         <script src="app/cms/cmshome/cmshome.js"></script>
+        <script src="app/cms/host-admin/host-admin.js"></script>
         <script src="app/cms/locale-admin/locale-admin.js"></script>
+        <script src="app/cms/edit-locale-admin/edit-locale-admin.js"></script>
+        <script src="app/cms/add-host-admin/add-host-admin.js"></script>
+        <script src="app/cms/add-event-admin/add-event-admin.js"></script>
         <script src="app/cms/add-locale-admin/add-locale-admin.js"></script>
         <script src="app/cms/locale-user/locale-user.js"></script>
+        <script src="app/cms/event-list-admin/event-list-admin.js"></script>
         <script src="app/cms/categories-admin/categories-admin.js"></script>
         <script src="app/cms/add-categories-admin/add-categories-admin.js"></script>
         <script src="app/cms/edit-categories-admin/edit-categories-admin.js"></script>

@@ -52,9 +52,29 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/cms/locale-admin/locale-admin.html',
 			controller  : 'localeadminController'
 		})
+		.when('/host-admin', {
+			templateUrl : 'app/cms/host-admin/host-admin.html',
+			controller  : 'hostadminController'
+		})
 		.when('/add-locale-admin', {
 			templateUrl : 'app/cms/add-locale-admin/add-locale-admin.html',
 			controller  : 'addLocaleadminController'
+		})
+		.when('/add-host-admin', {
+			templateUrl : 'app/cms/add-host-admin/add-host-admin.html',
+			controller  : 'addHostadminController'
+		})
+		.when('/event-list-admin', {
+			templateUrl : 'app/cms/event-list-admin/event-list-admin.html',
+			controller  : 'eventListadminController'
+		})
+		.when('/edit-locale-admin', {
+			templateUrl : 'app/cms/edit-locale-admin/edit-locale-admin.html',
+			controller  : 'editLocaleadminController'
+		})
+		.when('/add-event-admin', {
+			templateUrl : 'app/cms/add-event-admin/add-event-admin.html',
+			controller  : 'addEventadminController'
 		})
 		.when('/locale-user', {
 			templateUrl : 'app/cms/locale-user/locale-user.html',

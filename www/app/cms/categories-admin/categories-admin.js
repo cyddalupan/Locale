@@ -1,5 +1,6 @@
 app.controller('categoriesadminController', function($scope, $http, $cookies) {
-	    $scope.categories = '';
+    	$scope.$parent.hideNav = 1;
+		$scope.categories = '';
 
 		$scope.getCategories = function(){
 			$http({
