@@ -48,8 +48,6 @@
   padding-bottom: 99.99%;
 }
 .locale-square-list-4 {
-  background: #000;
-	border: 1px solid #fff;
 	margin: 0px;
 	padding: 0px;
 }
@@ -62,4 +60,186 @@
 	position:absolute;
 	height: 100%;
 	width: 100%
+}
+
+
+.event_1{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_1:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_2{
+	float: right;
+	position:relative;
+	display: block;
+	width: 66.66666667%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_2:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_3{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_3:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_4{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_4:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_5{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_5:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_6{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_6:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_7{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_7:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_8{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_8:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_9{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_9:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_10{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_10:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_11{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_11:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
+}
+.event_12{
+	float: left;
+	position:relative;
+	display: block;
+	width: 33.33333333%;
+	margin: 0px !important;
+	padding: 0px !important;
+  background: #000;
+	border: 1px solid #fff;
+}
+.event_12:after {
+	content: "";
+  display: block;
+  padding-bottom: 99.99%;
 }
