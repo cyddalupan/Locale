@@ -1696,6 +1696,92 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
+			$scope.register_user();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.register_user_id = 0;
+	$scope.register_user = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'register_user',
+			data:{
+				'username':'register_'+$scope.currdate,
+				'password':'12345',
+				'password_confirmation':'12345',
+				'fullname':'sample full name',
+				'email':'sample_register_email_'+$scope.currdate+'@gmail.com',
+				'img' : 'api/public/seed/user/1.jpg'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Register user',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.register_user_id = response.data.user.id;
+			$scope.delete_register_user();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.delete_register_user = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'delete_user',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'get_user_id':$scope.register_user_id
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Delete register user',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			//$scope.register_user();
 
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
@@ -1705,11 +1791,13 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 
 	
 //start from super admin account
-	//$scope.login_super_admin();
+	$scope.login_super_admin();
 //start from admin account
 	//$scope.wrong_username_test();
 //start from host account
 	//$scope.login_host_user();
 //start from creating event
-	$scope.login_admin_to_create_event();
+	//$scope.login_admin_to_create_event();
+//register user
+	//$scope.register_user();
 });
