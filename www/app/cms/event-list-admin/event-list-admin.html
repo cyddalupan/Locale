@@ -6,13 +6,14 @@
 				<h5>Create Event</h5>
 				<i class="fa fa-plus-circle" aria-hidden="true"></i>
 			</a>
+			<input type="text" ng-model="searchText">
 		</div>
 	</div>
 	<div class="event-admin-list-shell">
 		<div class="row modified-row-locale">
-			<a href="" class="event_{{$index + 1}}" ng-repeat="event in events">
+			<a class="{{event.class}}" ng-repeat="event in events | filter:searchText">
 				<img ng-src="{{event.img_url}}" alt="">
-				<p>{{$index + 1}}</p>
+				<p>{{$index + 1}}{{event.event_name}}</p>
 				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
 			</a>
 <!--			<a href="" class="locale-square-list-2 col-xs-8 event_2">

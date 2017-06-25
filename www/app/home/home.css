@@ -71,7 +71,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_1:after {
 	content: "";
@@ -86,7 +85,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_2:after {
 	content: "";
@@ -101,7 +99,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_3:after {
 	content: "";
@@ -116,7 +113,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_4:after {
 	content: "";
@@ -131,7 +127,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_5:after {
 	content: "";
@@ -146,7 +141,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_6:after {
 	content: "";
@@ -157,11 +151,10 @@
 	float: left;
 	position:relative;
 	display: block;
-	width: 33.33333333%;
+	width: 66.66666667%;
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_7:after {
 	content: "";
@@ -176,7 +169,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_8:after {
 	content: "";
@@ -191,7 +183,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_9:after {
 	content: "";
@@ -206,7 +197,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_10:after {
 	content: "";
@@ -221,7 +211,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_11:after {
 	content: "";
@@ -236,7 +225,6 @@
 	margin: 0px !important;
 	padding: 0px !important;
   background: #000;
-	border: 1px solid #fff;
 }
 .event_12:after {
 	content: "";

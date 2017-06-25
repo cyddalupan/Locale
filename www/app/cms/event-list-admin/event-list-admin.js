@@ -19,7 +19,7 @@ app.controller('eventListadminController', function($scope, $http, $cookies) {
 			}
 		}).then(function successCallback(response) {
             $scope.events = response.data.events;
-            console.log($scope.events);
+            console.log(response);
         });
     }
 	$scope.getAllEvents();

@@ -8,6 +8,10 @@
 	overflow: scroll;
     min-width: 100%;
 }
+.event-list-admin input {
+    background-color: transparent;
+    color: #fff;
+}
 .modified-row-locale a p {
     position: absolute;
     top:10px;
