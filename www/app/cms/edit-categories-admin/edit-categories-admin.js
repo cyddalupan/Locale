@@ -2,6 +2,15 @@ app.controller('editcategoriesadminController', function($scope, $http, $cookies
     $scope.category = '';
     $scope.category_id = $routeParams.category_id;
     $scope.$parent.hideNav = 1;
+
+    //Check if user logged
+    if ($cookies.get('user_type_id') < 3){
+		//user is correct
+	}else{
+		$location.path('/login');
+	}
+
+    //Get single category
     $http({
         method: 'POST',
         url: api_url+'get_category',
@@ -15,6 +24,8 @@ app.controller('editcategoriesadminController', function($scope, $http, $cookies
         $scope.category = response.data.category;
         console.log($scope.category);
     });
+
+    // Edit Category function
     $scope.editCategory = function(){
         $http({
 			method: 'POST',

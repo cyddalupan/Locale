@@ -20,10 +20,10 @@ app.controller('apploginController', function($scope, $http, $location, $cookies
                 $cookies.put('hash',response.data.hash);
                 $cookies.put('fullname',response.data.fullname);
                 $cookies.put('img',response.data.img);
-                if (response.data.user_type_id == 2){
+                if (response.data.user_type_id < 4){
                     $location.path('/cms-home');
                 }else {
-
+                    alert(response.data.user_type_id);
                 }
             }
 

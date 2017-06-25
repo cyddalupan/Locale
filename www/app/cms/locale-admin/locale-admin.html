@@ -9,11 +9,11 @@
 		</div>
 	</div>
 	<div class="locale-admin-list-shell">
-		<div class="locale-admin-name">
-			<div class="profile-image"><img src="img/edc2bc104.jpg" alt="" class="profile-image-inner"></div>
-			<h4>1</h4>
-			<h3>Paulo Contis</h3>
-			<p>paulocontis@gma.tv</p>
+		<div class="locale-admin-name" ng-repeat="admin in getAdmin">
+			<div class="profile-image"><img ng-src="{{admin.img}}" alt="" class="profile-image-inner"></div>
+			<h4>{{$index + 1}}</h4>
+			<h3>{{admin.fullname}}</h3>
+			<p>{{admin.email}}</p>
 			<a class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 			<a class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 		</div>

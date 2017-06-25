@@ -1,6 +1,15 @@
 app.controller('addcategoriesadminController', function($scope, $http, $cookies, $location) {
     $scope.$parent.hideNav = 1;
     $scope.msg = '';
+    
+    // Check if user is logged
+    if ($cookies.get('user_type_id') < 3){
+		//user is correct
+	}else{
+		$location.path('/login');
+	}
+
+    // Create Category
     $scope.addCategory = function () {
        $http({
 			method: 'POST',
@@ -24,5 +33,6 @@ app.controller('addcategoriesadminController', function($scope, $http, $cookies,
 
 		});
     }
+    
 
 });

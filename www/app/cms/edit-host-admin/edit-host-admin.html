@@ -1,19 +1,19 @@
-<div class="add-host-locale-admin-shell">
-	<div class="add-host-locale-admin-titlebar row">
+<div class="edit-host-locale-admin-shell">
+	<div class="edit-host-locale-admin-titlebar row">
 		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
 		<h2>Create New Host</h2>
 	</div>
 	<h1>{{msg}}</h1>
-	<div class="add-host-locale-admin-body">
-		<div class="add-host-locale-admin-input">
+	<div class="edit-host-locale-admin-body">
+		<div class="edit-host-locale-admin-input">
 			<input placeholder="NAME" type="text" value="" ng-model="name"/>
 		</div>
-		<div class="add-host-locale-admin-input">
+		<div class="edit-host-locale-admin-input">
 			<input placeholder="DESCRIPTION" type="text" value="" ng-model="description"/>
 		</div>
 		<div class="input-imgurl">
 			<input placeholder="IMAGE URL" type="text" value="" ng-model="img_url"/>
-			<div class="add-host-profile-image"><img src="img/edc2bc104.jpg" alt="" class="add-host-profile-image-inner"></div>
+			<div class="edit-host-profile-image"><img src="img/edc2bc104.jpg" alt="" class="edit-host-profile-image-inner"></div>
 		</div>
 		<div class="mapview-shell">
 			<input placeholder="MAP-EMBEDED-URL" type="text" value="" ng-model="img_url"/>
@@ -23,10 +23,10 @@
   				</div>
 			</div>
 		</div>
-		<div class="add-host-locale-admin-input">
+		<div class="edit-host-locale-admin-input">
 			<input placeholder="LONG-DESCRIPTION" type="text" value="" ng-model="longdescription"/>
 		</div>
-		<a class="ok-box" ng-click="addHost()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
+		<a class="ok-box" ng-click="editHost()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 	</div>
 
 </div>

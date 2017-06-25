@@ -9,12 +9,11 @@
 		</div>
 	</div>
 	<div class="host-admin-list-shell">
-		<div class="host-admin-name">
-			<div class="profile-image"><img src="img/mcdi.jpg" alt="" class="profile-image-inner"></div>
-			<h4>1</h4>
-			<h3>McDonalds</h3>
-			<p>133 Sugpo Dagat-Dagatan</p>
-			<h5>Caloocan City</h5>
+		<div class="host-admin-name" ng-repeat="host in getHosts">
+			<div class="profile-image"><img ng-src="{{host.img_url}}" alt="" class="profile-image-inner"></div>
+			<h4>{{$index + 1}}</h4>
+			<h3>{{host.name}}</h3>
+			<p>{{host.short_description}}</p>
 			<a class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 			<a class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 		</div>

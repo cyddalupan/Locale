@@ -5,7 +5,6 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	overflow: scroll;
     min-width: 100%;
 }
 .locale-titlebar {
@@ -47,7 +46,8 @@
     top:80px;
     left: 0;
     right: 0;
-    bottom: 0px;
+    bottom: 0px;    
+	overflow: scroll;
 }
 .locale-admin-name {
     background-color: rgba(48, 48, 48, 0.7);

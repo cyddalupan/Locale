@@ -1,4 +1,4 @@
-app.controller('addHostadminController', function($scope, $http, $cookies, $location) {
+app.controller('editHostadminController', function($scope, $http, $cookies, $location) {
     $scope.$parent.hideNav = 1;
     $scope.mapEmbed = '';
 
@@ -11,9 +11,6 @@ app.controller('addHostadminController', function($scope, $http, $cookies, $loca
 
 	//Get Host Function
 	$scope.get_host = function(){
-		//count test
-		$scope.testCount++;
-		//run API
 		$http({
 			method: 'POST',
 			url: api_url+'get_host',
