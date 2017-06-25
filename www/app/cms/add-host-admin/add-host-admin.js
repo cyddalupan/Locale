@@ -3,38 +3,12 @@ app.controller('addHostadminController', function($scope, $http, $cookies, $loca
     $scope.mapEmbed = '';
 
 	// Check if user is logged
-    if ($cookies.get('user_type_id') < 3){
+    if ($cookies.get('user_type_id') < 4){
 		//user is correct
 	}else{
 		$location.path('/login');
 	}
 
-	//Get Host Function
-	$scope.get_host = function(){
-		//count test
-		$scope.testCount++;
-		//run API
-		$http({
-			method: 'POST',
-			url: api_url+'get_host',
-			data:{
-				'user_id':$cookies.get('user_id'),
-				'hash':$cookies.get('hash'),
-				'host_id':1,
-			}
-		}).then(function successCallback(response) {
-
-			console.log(response);			
-
-			$scope.mapEmbed = response.data.host.google_map_embed;
-			//load the map to mapview div
-			$('.mapview-host').html($scope.mapEmbed);
-
-		}, function errorCallback(response) {
-			console.log(response);
-		});
-	}
-	$scope.get_host();
 	
 	//Save host Function
 	$scope.msg = '';
@@ -44,9 +18,13 @@ app.controller('addHostadminController', function($scope, $http, $cookies, $loca
 			url: api_url+'create_host',
 			data:{
                 'user_id':$cookies.get('user_id'),
-				'name':$scope.name,
-				'img_url':$scope.img_url,
-				'hash':$cookies.get('hash')
+				'hash':$cookies.get('hash'),
+				'host_id':$scope.host_id,
+				'name':$scope.host.name,
+				'img_url':$scope.host.img_url,
+				'short_description':$scope.host.short_description,
+				'long_description':$scope.host.long_description,
+				'google_map_embed':$scope.host.google_map_embed
 			}
 		}).then(function successCallback(response) {
 
@@ -54,11 +32,15 @@ app.controller('addHostadminController', function($scope, $http, $cookies, $loca
                 $scope.msg = response.data.message;
             } else {
                 alert(response.data.message);
-                $location.path('/categoriesadmin');
             }
                 console.log(response)
 		}, function errorCallback(response) {
 
 		});
     }
+	
+	// Map View onchange
+	$scope.mapChange = function () {
+		$('.mapview-host').html($scope.host.google_map_embed);
+	}
 });

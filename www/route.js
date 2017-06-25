@@ -64,6 +64,10 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/cms/add-host-admin/add-host-admin.html',
 			controller  : 'addHostadminController'
 		})
+		.when('/edit-host-admin/:host_id', {
+			templateUrl : 'app/cms/edit-host-admin/edit-host-admin.html',
+			controller  : 'editHostadminController'
+		})
 		.when('/event-list-admin', {
 			templateUrl : 'app/cms/event-list-admin/event-list-admin.html',
 			controller  : 'eventListadminController'

@@ -32,7 +32,7 @@ app.controller('categoriesadminController', function($scope, $http, $cookies) {
 				data: {
 					'user_id':$cookies.get('user_id'),
 					'hash':$cookies.get('hash'),
-					'category_id':category_id
+					'host_id':host_id
 				}
 			}).then(function successCallback(response) {
 				console.log(response);

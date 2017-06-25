@@ -6,20 +6,19 @@
 	<h1>{{msg}}</h1>
 	<div class="add-host-locale-admin-body">
 		<div class="add-host-locale-admin-input">
-			<input placeholder="NAME" type="text" value="" ng-model="name"/>
+			<input placeholder="NAME" type="text" value="" ng-model="host.name"/>
 		</div>
 		<div class="add-host-locale-admin-input">
-			<input placeholder="DESCRIPTION" type="text" value="" ng-model="description"/>
+			<input placeholder="DESCRIPTION" type="text" value="" ng-model="host.short_description"/>
 		</div>
 		<div class="input-imgurl">
-			<input placeholder="IMAGE URL" type="text" value="" ng-model="img_url"/>
-			<div class="add-host-profile-image"><img src="img/edc2bc104.jpg" alt="" class="add-host-profile-image-inner"></div>
+			<input placeholder="IMAGE URL" type="text" value="" ng-model="host.img_url"/>
+			<div class="add-host-profile-image"><img ng-src="{{host.img_url}}" alt="" class="add-host-profile-image-inner"></div>
 		</div>
 		<div class="mapview-shell">
-			<input placeholder="MAP-EMBEDED-URL" type="text" value="" ng-model="img_url"/>
+			<input placeholder="MAP-EMBEDED-URL" ng-change="mapChange()" type="text" value="" ng-model="host.google_map_embed"/>
 			<div class="mapview-shell-2">
 				<div class="mapview-host">
-					<img src="img/three-dots.svg" alt="">
   				</div>
 			</div>
 		</div>

@@ -14,8 +14,8 @@
 			<h4>{{$index + 1}}</h4>
 			<h3>{{host.name}}</h3>
 			<p>{{host.short_description}}</p>
-			<a class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-			<a class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+			<a ng-click="deleteHost(host.id)" class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+			<a href="#/edit-host-admin/{{host.id}}" class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 		</div>
 	</div>
 
