@@ -1609,7 +1609,93 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 			$scope.atr.push(arrayText);
 
 			//call next test
-			//$scope.change_event_position();
+			$scope.create_host_user();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.created_host_id = 0;
+	$scope.create_host_user = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'create_host_user',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'username':'host_'+$scope.currdate,
+				'password':'12345',
+				'password_confirmation':'12345',
+				'fullname':'sample full name',
+				'email':'sample_host_email_'+$scope.currdate+'@gmail.com',
+				'img' : 'api/public/seed/user/1.jpg'
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Create an host',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
+			$scope.created_host_id = response.data.user.id;
+			$scope.delete_host_user();
+
+		}, function errorCallback(response) {
+			$scope.FailedCount++;
+			console.log(response);
+		});
+	}
+
+	$scope.delete_host_user = function(){
+		//count test
+		$scope.testCount++;
+		//run API
+		$http({
+			method: 'POST',
+			url: api_url+'delete_user',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash'),
+				'get_user_id':$scope.created_host_id
+			}
+		}).then(function successCallback(response) {
+
+			//manage result
+			if(response.data.result == 'success'){
+				testR = "Success";
+				$scope.SuccessCount++;
+			}else{
+				testR = "Failed";
+				$scope.FailedCount++;
+			}
+
+			//Add to array
+			arrayText = {
+				Title: 'Delete host',
+				SampOutput: response.data.message,
+				result: testR,
+			};
+			$scope.atr.push(arrayText);
+
+			//call next test
 
 		}, function errorCallback(response) {
 			$scope.FailedCount++;
