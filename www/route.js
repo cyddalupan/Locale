@@ -80,6 +80,10 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/cms/add-event-admin/add-event-admin.html',
 			controller  : 'addEventadminController'
 		})
+		.when('/edit-event-admin/:event_id', {
+			templateUrl : 'app/cms/edit-event-admin/edit-event-admin.html',
+			controller  : 'editEventadminController'
+		})
 		.when('/locale-user', {
 			templateUrl : 'app/cms/locale-user/locale-user.html',
 			controller  : 'localeUserController'

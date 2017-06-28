@@ -11,70 +11,13 @@
 	</div>
 	<div class="event-admin-list-shell">
 		<div class="row modified-row-locale">
-			<a class="{{event.class}}" ng-repeat="event in events | filter:searchText">
-				<img ng-src="{{event.img_url}}" alt="">
-				<p>{{$index + 1}}{{event.event_name}}</p>
+			<div class="{{event.class}}" ng-repeat="event in events | filter:searchText">
+				<img class="event-list-image" ng-src="{{event.img_url}}" alt="">
+				<p>{{$index + 1}}) {{event.event_name}}</p>
 				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-<!--			<a href="" class="locale-square-list-2 col-xs-8 event_2">
-				<img src="img/test-2.png" alt="">
-				<p>2</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-			<a href="" class="locale-square-list col-xs-4 event_3">
-				<img src="img/test-1.jpg" alt="">
-				<p>3</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-
-			<a href="" class="locale-square-list col-xs-4 event_4">
-				<img src="img/test-2.jpg" alt="">
-				<p>4</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-			<a href="" class="locale-square-list col-xs-4 event_5">
-				<img src="img/test-2.png" alt="">
-				<p>5</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-			<a href="" class="locale-square-list col-xs-4 event_6">
-				<img src="img/test-1.png" alt="">
-				<p>6</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-		</div>
-		<div class="row modified-row-locale">
-			<a href="" class="locale-square-list-3 col-xs-8 event_7">
-				<img src="img/test-2.png" alt="">
-				<p>7</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-			<a href="" class="locale-square-list col-xs-4 event_8">
-				<img src="img/test-2.jpg" alt="">
-				<p>8</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-			<a href="" class="locale-square-list col-xs-4 event_9">
-				<img src="img/test-1.png" alt="">
-				<p>9</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-			
-			<a href="" class="locale-square-list-4 col-xs-4 event_10">
-				<img src="img/test-1.jpg" alt="">
-				<p>10</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-			<a href="" class="locale-square-list-4 col-xs-4 event_11">
-				<img src="img/test-2.png" alt="">
-				<p>11</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a>
-			<a href="" class="locale-square-list-4 col-xs-4 event_12">
-				<img src="img/test-1.jpg" alt="">
-				<p>12</p>
-				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
-			</a> -->
+				<a href="#/edit-event-admin/{{event.id}}"><i class="fa fa-pencil-square-o edit-button-events" aria-hidden="true"></i></a>
+				<i class="fa fa-trash-o delete-button-events" aria-hidden="true"></i>
+			</div>
 		</div>
 	</div>
 

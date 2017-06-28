@@ -1,18 +1,12 @@
-<div class="category">
-	<a class="" href="#/categories">
-    	<div class="responsive-circle-category col-xs-6">
-            <div class="circle-inner-category">
-				<img src="img/category-1.png" alt="">
-				<h4>SPORTS & RECREATION</h4>
-			</div>
-        </div>
-    </a>
-	<a class="" href="#/categories">
-    	<div class="responsive-circle-category col-xs-6">
-            <div class="circle-inner-category">
-				<img src="img/category-1.png" alt="">
-				<h4>SPORTS & RECREATION</h4>
-			</div>
-        </div>
-    </a>
+<div class="category row">
+	<div class="" ng-repeat="category in categories">
+		<div class="responsive-circle-category-admin col-xs-6">
+			<a href="#/edit-categories-admin/{{category.id}}">
+				<div class="circle-inner-category-admin">
+					<img ng-src="{{category.img_url}}" alt="">
+					<h4>{{category.name}}</h4>
+				</div>
+			</a>
+		</div>
+	</div>
 </div>

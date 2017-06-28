@@ -12,7 +12,7 @@
     background-color: transparent;
     color: #fff;
 }
-.modified-row-locale a p {
+.modified-row-locale div p {
     position: absolute;
     top:10px;
     left: 10px;
@@ -102,21 +102,26 @@
     position: relative;
     border-bottom: 1px solid #6c6c6c;
 }
-.delete-button{
+.delete-button-events{
     position: absolute;
-    bottom: 3px;
-    right:12px;
+    bottom: 2px;
+    right:40px;
     padding: 0px;
     margin: 0px;
     color: #fff;
     font-size: 25px;
 }
-.edit-button{
+.edit-button-events{
     position: absolute;
     bottom: 0px;
-    right:40px;
+    right:5px;
     padding: 0px;
     margin: 0px;
     color: #fff;
     font-size: 26px;
+}
+.event-list-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }

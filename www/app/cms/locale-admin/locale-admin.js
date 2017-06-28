@@ -20,7 +20,7 @@ app.controller('localeadminController', function($scope, $http, $cookies) {
 			}
 		}).then(function successCallback(response) {
             $scope.getAdmin = response.data.users;
-            console.log($scope.getAdmin);
+            console.log(response);
         });
     }
     $scope.getAlladmin()

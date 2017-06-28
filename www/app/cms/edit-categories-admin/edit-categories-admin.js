@@ -25,7 +25,7 @@ app.controller('editcategoriesadminController', function($scope, $http, $cookies
         console.log($scope.category);
     });
 
-    // Edit Category function
+    // Save edit Category function
     $scope.editCategory = function(){
         $http({
 			method: 'POST',

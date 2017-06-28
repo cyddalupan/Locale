@@ -23,7 +23,9 @@ app.controller('apploginController', function($scope, $http, $location, $cookies
                 if (response.data.user_type_id < 4){
                     $location.path('/cms-home');
                 }else {
-                    alert(response.data.user_type_id);
+                    if (response.data.user_type_id = 4){
+                        $location.path('/');
+                    }
                 }
             }
 

@@ -1,18 +1,18 @@
 <div class="add-event-admin-shell">
 	<div class="add-event-admin-titlebar row">
 		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
-		<h2>Add Event</h2>
+		<h2>Edit Event</h2>
 	</div>
 	<h1>{{msg}}</h1>
 	<div class="add-event-admin-body">
 		<div class="add-event-admin-input">
-			Featured? <input type="checkbox">
+			Featured?<input type="checkbox">
 		</div>
 		<div class="add-event-admin-input">
 			<input placeholder="NAME" type="text" value="" ng-model="event.event_name"/>
 		</div>
 		<div class="add-event-admin-input">
-			<input placeholder="DESCRIPTION" type="text" value="" ng-model="event.long_description"/>
+			<input placeholder="DESCRIPTION" type="text" value="" ng-model="password"/>
 		</div>
 		<div class="add-event-admin-input">
 			<input placeholder="SHORT-DESCRIPTION" type="text" value="" ng-model="event.short_description"/>
@@ -21,25 +21,28 @@
 			<input placeholder="POSITION" type="text" value="" ng-model="event.position_sort"/>
 		</div>
 		<div class="add-event-admin-input">
-			<input placeholder="DATE" type="date" value="" ng-model="event.event_date"/>
+			<input placeholder="DATE" type="text" value="" ng-model="event.event_date"/>
 		</div>
-		<select name="" id="" class="add-event-dropdown">
-			<option value="">test1</option>
-			<option value="">test2</option>
-			<option value="">test3</option>
-			<option value="">test4</option>
-		</select>
-		<select name="" id="" class="add-event-dropdown">
-			<option value="">test1</option>
-			<option value="">test2</option>
-			<option value="">test3</option>
-			<option value="">test4</option>
-		</select>
+		<div class="add-event-admin-input">
+			<select
+				ng-options="Host.id*1 as Host.name for Host in eventHosts"
+				ng-model="event.host_id">
+			</select>
+
+		</div>
+
+		<div class="add-event-admin-input">
+			<select
+				ng-options="Category.id*1 as Category.name for Category in eventCategory"
+				ng-model="event.category_id">
+			</select>
+		</div>
+
 		<div class="input-imgurl">
 			<input placeholder="IMAGE URL" type="text" value="" ng-model="event.img_url"/>
 			<div class="add-profile-image"><img ng-src="{{event.img_url}}" alt="" class="add-profile-image-inner"></div>
 		</div>
-		<a class="ok-box" ng-click="addEvent()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
+		<a class="ok-box" ng-click="editEvent()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 	</div>
 
 </div>

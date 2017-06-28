@@ -15,6 +15,9 @@
     bottom: 0;
     z-index: 99999;
     display: block;
+    max-height: 100%;
+    overflow: scroll;
+    max-width: 100%;
 }
 .locale-login-header {
     text-align: center;
@@ -26,10 +29,13 @@
     height:40vw;
     width: 40vw;
     display: block;
-    margin: 5vw auto;
+    margin: 10px auto;
+    max-width: 175px;
+    max-height: 175px;
 }
 .locale-logo-login{
-    margin: auto;
+    margin: 10px auto 30px auto;
+
 }
 .username-locale-shell{
     background: rgba(0, 0, 0, 0);
@@ -43,29 +49,42 @@
 }
 .username-locale {
     background: none;
-    padding: 0 3px;
+    padding: 0px 3px;
+    margin: 0px;
     border:0;
     width: 100%;
-    font-size: 10px;
+    font-size: 9px;
+    line-height: 25px;
     min-height: 100%;
+    color: #fff;
+}
+input::placeholder {
+  color: #fff;
+  padding-left: 4px;
 }
 .locale-login-button {
-    font-size: 15px;
+    font-size: 3vw;
     border-radius: 30px;
     background-color: transparent;
     border: 3px solid #fff;
-    margin-left: 20%;
+    margin-left: 22%;
     margin-right: auto;
+    margin-top: 5%;
+    width: 20%;
+    padding: 0px;
     z-index: 1;
 }
 .locale-signup-button {
-    font-size: 15px;
+    font-size: 3vw;
     border-radius: 30px;
     background-color: transparent;
     border: 3px solid #fff;
-    margin-left: 10%;
+    margin-left: 16%;
+    margin-top: 5%;
+    width: 20%;
     margin-right: auto;
     white-space: nowrap;
+    padding: 0px;
     text-align: center;
 }
 
@@ -73,18 +92,25 @@
     margin: auto;
 }
 .circle-inner-login h4 {
-    font-size: 4vw;
-}
-.circle-inner-login{
+    font-size: 2.4vw;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+    margin-left: -2.4vw;
+    width: 30vw;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    font-weight: bold;
 }
 .responsive-circle-login {
-    margin-top: 30px !important;
+    margin-top: 16% !important;
     top: 15px;
     left: 15px;
-    font-size: 80px;
     font-weight: 700;
     margin: auto;
-    width: 40vw;
+    width: 25vw;
+    max-width: 150px;
+    max-height: 150px;
 }
 .responsive-circle-login::after {
     border-radius: 50%;
@@ -94,15 +120,49 @@
     margin-bottom: 20px;
     padding-bottom: 100%;
     width: 100%;
-    border: 3px solid #fff;
+    border: 1.5px solid #fff;
 }
 .responsive-circle-login div {
     color:#fff;
     float: left;
     line-height: 1em;
-    margin-top: -0.5em;
-    padding-top: 16vw;
+    padding-top: 9.4vw;
     text-align: center;
     width: 100%;
-    font-size: 30px;
+}
+@media screen and (max-width: 260px){
+    .locale-login-header {
+        font-size: 42px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 360px){
+    .locale-login-header {
+        font-size: 14vw;
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width: 600px){
+    .circle-inner-login h4 {
+        font-size: 15px;
+        margin-left: auto;
+        width: inherit;
+    }
+    .responsive-circle-login {
+        margin-top: 60px !important;
+    }
+    .responsive-circle-login div {
+        padding-top: 54px;
+    }
+    .responsive-circle-login {
+        width: 200px;
+    }
+    .locale-login-button {
+        font-size: 3vw;
+        margin-top: 10px;
+    }
+    .locale-signup-button {
+        font-size: 3vw;
+        margin-top: 10px;
+    }
 }

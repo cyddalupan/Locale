@@ -1,12 +1,15 @@
 app.controller('hostadminController', function($scope, $http, $cookies, $location) {
     $scope.$parent.hideNav = 1;
     $scope.getHosts = '';
+
     // Check if user is logged
     if ($cookies.get('user_type_id') < 4){
 		//user is correct
 	}else{
 		$location.path('/login');
 	}
+
+	//
     $scope.getAllhost = function(){
         $http({
 			method: 'POST',
@@ -20,6 +23,8 @@ app.controller('hostadminController', function($scope, $http, $cookies, $locatio
             console.log(response);
         });
     }
+
+	//
     $scope.deleteHost = function(host_id){
 		if(confirm('Are you sure you want to Delete?')){
 			$http({

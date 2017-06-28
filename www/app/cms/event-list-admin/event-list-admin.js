@@ -1,4 +1,4 @@
-app.controller('eventListadminController', function($scope, $http, $cookies) {
+app.controller('eventListadminController', function($scope, $http, $cookies, $location) {
     $scope.$parent.hideNav = 1;
 	$scope.events = '';
 

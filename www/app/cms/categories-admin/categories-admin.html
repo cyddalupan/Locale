@@ -8,8 +8,9 @@
 			</a>
 		</div>
 	</div>
-	<div class="category-admin" ng-repeat="category in categories">
-		<a class="">
+	<div class="category-admin-body-shell">
+	<div class="category-admin" >
+		<div class="" ng-repeat="category in categories">
 			<div class="responsive-circle-category-admin col-xs-6">
 				<a href="#/edit-categories-admin/{{category.id}}">
 					<div class="circle-inner-category-admin">
@@ -21,6 +22,7 @@
 					<i class="fa fa-minus-circle" aria-hidden="true"></i>
 				</a>
 			</div>
-		</a>
+		</div>
+	</div>
 	</div>
 </div>

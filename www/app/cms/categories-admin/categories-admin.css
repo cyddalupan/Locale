@@ -5,8 +5,9 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	overflow: scroll;
     min-width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 .category-titlebar {
     position: relative;
@@ -47,8 +48,15 @@
 }
 .category-admin{
     padding: 0px 0px;
-    position: relative;
-    margin: 0px 10px 0px -20px !important;
+    margin: 0px 15px 0px -15px !important;
+}
+.category-admin-body-shell{
+    position: absolute;
+    top:60px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+	overflow: scroll;
 }
 .circle-inner-category-admin{
     padding: auto;

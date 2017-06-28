@@ -30,6 +30,8 @@
   width: 58%;
   margin: 0px auto;
   padding: .2vw 0 0 0;
+  position: relative;
+  display: block;
 }
 .add-event-admin-input input:focus {
   outline: none;
@@ -117,4 +119,50 @@
   top: 13px;
   left: 13px;
   font-size: 30px;
+}
+
+select {
+  margin: 10px auto 10px auto;
+  border: 1px solid #111;
+  background: transparent;
+  width: 95% !important;
+  font-size: 3.5vw;
+  border: 1px solid #ccc;
+  height: 10vw;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../../../img/dropdown.ico) 96% / 15% no-repeat #333;
+  display: block;
+}
+
+
+input[type=checkbox] {
+display:none;
+}
+ 
+input[type=checkbox] + label
+{
+background: #999;
+height: 16px;
+width: 16px;
+display:inline-block;
+padding: 0 0 0 0px;
+position: absolute;
+top:0px;
+right: 0px;
+}
+input[type=checkbox]:checked + label
+{
+background: #0080FF;
+height: 16px;
+width: 16px;
+display:inline-block;
+padding: 0 0 0 0px;
+}
+.event-select-image {
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
