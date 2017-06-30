@@ -1,4 +1,4 @@
-app.controller('apploginController', function($scope, $http, $location, $cookies) {
+app.controller('apploginController', function($scope, $http, $location, $cookies, $timeout) {
    $scope.$parent.hideNav = 1;
    $scope.errormsg = '';
 
@@ -13,6 +13,12 @@ app.controller('apploginController', function($scope, $http, $location, $cookies
 		}).then(function successCallback(response) {
             if (response.data.result == 'failed') {
                 $scope.errormsg = response.data.message;
+                $scope.loginAlertMessage=false;
+                $(".error-message-shell").show();
+                $(".error-message-shell").fadeOut(4000);
+                $timeout(function () { 
+                    $scope.loginAlertMessage = true;
+                }, 4000);  
             } else {
                 //Put this info when user is logged
                 $cookies.put('user_id',response.data.user_id);
@@ -36,4 +42,8 @@ app.controller('apploginController', function($scope, $http, $location, $cookies
 			console.log(response);
 		});
 	}
+    $scope.visitPage = function(){
+        $location.path('/sign-up')
+    }
+
 });

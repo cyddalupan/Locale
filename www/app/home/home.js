@@ -14,5 +14,4 @@ app.controller('homeController', function($scope, $http, $cookies, $location) {
 		$scope.events = response.data.events;
 		console.log(response);
 	});
-
 });

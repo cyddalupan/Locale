@@ -1,7 +1,7 @@
 <div class="locale-home-shell container">
   <div class="row modified-row-locale">
-    	<div class="{{event.class}}" ng-repeat="event in events | filter:searchText">
+    	<a href="#/single-view/{{event.id}}" class="{{event.class}}" ng-repeat="event in events | filter:searchText">
 				<img class="event-list-image" ng-src="{{event.img_url}}" alt="">
-			</div>
+			</a>
   </div>
 </div>

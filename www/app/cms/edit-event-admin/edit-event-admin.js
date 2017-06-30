@@ -1,7 +1,6 @@
 app.controller('editEventadminController', function($scope, $http, $cookies, $location, $routeParams) {
     $scope.$parent.hideNav = 1;
 	$scope.event_id = $routeParams.event_id;
-	$scope.category_id = $routeParams.category_id;
     $scope.eventHost = '';
 	$scope.eventCategory = '';
     $scope.event = '';
@@ -71,7 +70,7 @@ app.controller('editEventadminController', function($scope, $http, $cookies, $lo
 				'event_name':$scope.event.event_name,
 				'img_url':$scope.event.img_url,
 				'short_description':$scope.event.short_description,
-				'long_description':$scope.event.long_description,
+				'description':$scope.event.long_description,
 				'category_id':$scope.event.category_id,
 				'host_id':$scope.event.host_id,
 				'position_sort':$scope.event.position_sort,

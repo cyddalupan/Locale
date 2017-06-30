@@ -23,7 +23,7 @@
     text-align: center;
     font-size: 62px;
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .locale-logo-login img {
     height:40vw;
@@ -32,6 +32,8 @@
     margin: 10px auto;
     max-width: 175px;
     max-height: 175px;
+    -webkit-filter: drop-shadow(2px 2px 9px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(2px 2px 9px rgba(0, 0, 0, 0.5));
 }
 .locale-logo-login{
     margin: 10px auto 30px auto;
@@ -46,6 +48,8 @@
     width: 70%;
     border: 3px solid #fff;
     border-radius: 30px;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
+
 }
 .username-locale {
     background: none;
@@ -57,6 +61,7 @@
     line-height: 25px;
     min-height: 100%;
     color: #fff;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
 }
 input::placeholder {
   color: #fff;
@@ -73,6 +78,7 @@ input::placeholder {
     width: 20%;
     padding: 0px;
     z-index: 1;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
 }
 .locale-signup-button {
     font-size: 3vw;
@@ -85,7 +91,9 @@ input::placeholder {
     margin-right: auto;
     white-space: nowrap;
     padding: 0px;
+    z-index: 1;
     text-align: center;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
 }
 
 .locale-login a{
@@ -111,6 +119,7 @@ input::placeholder {
     width: 25vw;
     max-width: 150px;
     max-height: 150px;
+    
 }
 .responsive-circle-login::after {
     border-radius: 50%;
@@ -121,6 +130,7 @@ input::placeholder {
     padding-bottom: 100%;
     width: 100%;
     border: 1.5px solid #fff;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
 }
 .responsive-circle-login div {
     color:#fff;
@@ -130,16 +140,34 @@ input::placeholder {
     text-align: center;
     width: 100%;
 }
+.error-message-shell {
+    position: fixed;
+    bottom: 30px;
+    left: 10%;
+    right: 10%;
+}
+.error-message {
+    position: relative;
+    display: block;
+    margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    text-align: center;
+    font-size: 4vw;
+}
+
+
+
 @media screen and (max-width: 260px){
     .locale-login-header {
-        font-size: 42px;
-        margin-top: 10px;
+        font-size: 16vw !important;
+        margin-top: 40px;
     }
 }
 @media screen and (max-width: 360px){
     .locale-login-header {
-        font-size: 14vw;
-        margin-top: 10px;
+        font-size: 16vw;
+        margin-top: 40px;
     }
 }
 @media screen and (min-width: 600px){

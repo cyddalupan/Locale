@@ -7,25 +7,33 @@
     z-index: 99999;
     /* background: url("../../img/locale-bg.jpg")*/
 }
+.single-view-back img {
+    margin: 11px 8px;
+    display: block;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+}
 .locale-single-view-logo {
     width: 100%;
     display: block;
 }
 .locale-single-view-logo img{
-    height: 30px;
-    width: 30px;
-    margin: auto;
+    height: 42px;
+    width: 42px;
+    margin: 5px auto;
+    display: block;
 }
 .locale-single-view-image {
     position:fixed;
-    bottom: 190px;
+    bottom: 202px;
     left: 0;
     right: 0;
     top: 70px;
     min-width: 100%;
     width: 100%;
-    background-color: #fff;
     display: block;
+    border-top: 3px solid #fff;
 }
 .locale-single-view-image img {
     position:absolute;
@@ -40,7 +48,7 @@
     border-top: 3px solid #fff;
     left: 0px;
     right: 0px;
-    bottom: 100px;
+    bottom: 123px;
     min-height: 1px !important;
 }
 .locale-nav-single-view a {
@@ -50,7 +58,7 @@
     margin-bottom: 0px !important;
     height: 100%;
     min-height: 100%;
-    padding: 15px 0px;
+    padding: 10px 0px;
 }
 .container-fluid-custom-single-view {
     padding: 0px !important;
@@ -74,4 +82,63 @@
 .locale-nav-single-view a:active {
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 30px;
+}
+
+.single-view-host-img{
+    position: absolute;
+    bottom: 13px;
+    left: 13px;
+    background-color: #000;
+    height: 115px;
+    width: 115px;
+}
+.single-view-descrition {
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 135px;
+    right: 13px;
+    bottom: 13px;
+    height: 70px;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: scroll; 
+}
+.single-view-descrition h5 {
+    font-size: calc(12px + 0.2vw);
+    font-weight: bold;
+    margin-bottom: 3px;
+    margin-top: 0px;
+}
+.single-view-descrition p {
+    color: #fff;
+    font-size: calc(10px + 0.2vw);
+}
+.non-responding-circle {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
+    bottom: 90px;
+}
+.non-responding-circle i {
+    font-size: 20px;
+    margin: 10px auto auto 12px;
+}
+.facebook-circle {
+    position: absolute;
+    left: 135px;
+}
+.facebook-circle i {
+    margin: 10px auto auto 15px !important;
+}
+.instagram-circle {
+    position: absolute;
+    left: 190px;
+}
+.twitter-circle {
+    position: absolute;
+    left: 243px;
 }

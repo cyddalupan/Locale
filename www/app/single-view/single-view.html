@@ -1,7 +1,8 @@
 
 <div class="locale-single-view">
+    <a onclick="history.back(-1)" class="single-view-back"><img src="img/back-arrow.png" alt=""></a>
     <div class="locale-single-view-logo"> <img src="img/locale-logo-white.png" alt=""></div>
-    <div class="locale-single-view-image"><img src="img/test-2.png" alt=""></div>
+    <div class="locale-single-view-image"><img ng-src="{{event.img_url}}" alt=""></div>
     <nav class="navbar navbar-locale-handler-single-view row">
         <div class="container-fluid-custom-single-view">
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -12,4 +13,13 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+    <div class="single-view-host-img"></div>
+    <div class="facebook-circle non-responding-circle"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+    <div class="instagram-circle non-responding-circle"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+    <div class="twitter-circle non-responding-circle"><i class="fa fa-twitter" aria-hidden="true"></i>
+</div>
+    <div class="single-view-descrition">
+        <h5>{{event.event_name}}</h5>
+        <p>{{event.short_description}}</p>
+    </div>
 </div>

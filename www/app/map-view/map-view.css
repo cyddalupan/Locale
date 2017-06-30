@@ -1,16 +1,13 @@
-.locale-signup-blur{
+.locale-map-view-blur{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 99999;
-    filter: blur(5%);
-    -webkit-filter: blur(5%);
     background-color: #000;
-    /* background: url("../../img/locale-bg.jpg")*/
 }
-.locale-signup{
+.locale-map-view{
     position: fixed;
     top: 0;
     left: 0;
@@ -19,7 +16,9 @@
     z-index: 99999;
     display: block;
 }
-.signup-fill-shell {
+.locale-map-view-shell {
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 30px 30px;
+    padding: 1px 0px;
+    margin: 40px 30px;
+    border-radius: 14px;
 }

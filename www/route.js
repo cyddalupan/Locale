@@ -20,13 +20,17 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/login/login.html',
 			controller  : 'apploginController',
 		})
-		.when('/signup', {
-			templateUrl : 'app/signup/signup.html',
-			controller  : 'appsignupController',
+		.when('/sign-up', {
+			templateUrl : 'app/sign-up/sign-up.html',
+			controller  : 'appsignUpController',
 		})
-		.when('/single-view', {
+		.when('/single-view/:event_id', {
 			templateUrl : 'app/single-view/single-view.html',
-			controller  : 'appsignupController',
+			controller  : 'appsingleViewController',
+		})
+		.when('/map-view', {
+			templateUrl : 'app/map-view/map-view.html',
+			controller  : 'appmapViewController',
 		})
 		.when('/settings', {
 			templateUrl : 'app/locale-settings/locale-settings.html',

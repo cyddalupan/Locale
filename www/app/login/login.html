@@ -2,12 +2,14 @@
 <div class="locale-login">
     <h1 class="locale-login-header">LOCALE</h1>
     <div class="locale-logo-login"><img src="img/locale-logo-white.png" alt=""></div>
-    {{errormsg}}
+    <div class="error-message-shell" ng-hide="loginAlertMessage">
+        <div class="error-message">{{errormsg}}</div>
+    </div>
     <div class="username-locale-shell row"><input type="text" class="username-locale" id="i2" placeholder="USERNAME:" onfocus="" ng-model="username"></div>
     <div class="username-locale-shell row"><input type="password" class="username-locale" id="i2" placeholder="PASSWORD:" onfocus="" ng-model="password"></div>
     <div class="">
         <button class="locale-login-button  col-xs-offset-2 col-xs-3 col-xs-offset-2" ng-click="loginS()">LOGIN</button>
-        <button class="locale-signup-button col-xs-3 col-xs-offset-2">SIGN UP</button>
+        <button class="locale-signup-button col-xs-3 col-xs-offset-2" ng-click="visitPage()">SIGN UP</button>
     </div>
     <a class="">
     	<div class="responsive-circle-login">

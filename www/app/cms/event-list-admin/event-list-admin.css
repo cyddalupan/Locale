@@ -11,11 +11,24 @@
 .event-list-admin input {
     background-color: transparent;
     color: #fff;
+    width: 75%;
+    position: fixed;
+    left: 50%;
+    margin-left: -37.5%;
+    top: 58px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(48, 48, 48, 0.4)
 }
 .modified-row-locale div p {
     position: absolute;
-    top:10px;
+    top: 40px;
+    word-wrap: break-word;
+    overflow: scroll;
     left: 10px;
+    bottom: 20px;
+    right: 10px;
     color: #fff;
     text-shadow:
     -1px -1px 0 #000,  
