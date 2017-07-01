@@ -1,6 +1,7 @@
 app.controller('addEventadminController', function($scope, $http, $cookies, $location) {
     $scope.$parent.hideNav = 1;
 	$scope.event = [];
+	$scope.msg = '';
     
     // Check if user is logged
     if ($cookies.get('user_type_id') < 3){
@@ -8,9 +9,37 @@ app.controller('addEventadminController', function($scope, $http, $cookies, $loc
 	}else{
 		$location.path('/login');
 	}
+	
+	$scope.getAllhost = function(){
+        $http({
+			method: 'POST',
+			url: api_url+'get_all_host',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash')
+			}
+		}).then(function successCallback(response) {
+            $scope.eventHosts = response.data.hosts;
+			$scope.getCategories()	
+        });
+    }
+	$scope.getAllhost()
+	
+	//Get all Categories
+	$scope.getCategories = function(){
+		$http({
+			method: 'POST',
+			url: api_url+'all_category',
+			data: {
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash')
+			}
+		}).then(function successCallback(response) {
+			$scope.eventCategory = response.data.categories;
+		});
+	}
 
 	//Save host Function
-	$scope.msg = '';
     $scope.addEvent = function () {
        $http({
 			method: 'POST',

@@ -4,11 +4,20 @@
 		<h2>Edit Host</h2>
 	</div>
 	<div class="edit-host-locale-admin-body">
-		<div class="edit-host-locale-admin-input">
-			<input placeholder="NAME" type="text" ng-model="host.name"/>
+		<div class="add-host-locale-admin-input">
+			<input placeholder="NAME" type="text" value="" ng-model="host.name"/>
 		</div>
-		<div class="edit-host-locale-admin-input">
-			<input placeholder="DESCRIPTION" type="text" ng-model="host.short_description"/>
+		<div class="add-host-locale-admin-input">
+			<input placeholder="DESCRIPTION" type="text" value="" ng-model="host.short_description"/>
+		</div>
+		<div class="add-host-locale-admin-input">
+			<input placeholder="FACEBOOK LINK" type="text" value="" ng-model="host.facebook"/>
+		</div>
+		<div class="add-host-locale-admin-input">
+			<input placeholder="INSTAGRAM LINK" type="text" value="" ng-model="host.instagram"/>
+		</div>
+		<div class="add-host-locale-admin-input">
+			<input placeholder="TWITTER LINK" type="text" value="" ng-model="host.twitter"/>
 		</div>
 		<div class="input-imgurl">
 			<input placeholder="IMAGE URL" type="text" value="" ng-model="host.img_url"/>
@@ -23,7 +32,7 @@
 			</div>
 		</div>
 		<div class="edit-host-locale-admin-input">
-			<input placeholder="LONG-DESCRIPTION" type="text" value="" ng-model="longdescription"/>
+			<input placeholder="LONG-DESCRIPTION" type="text" value="" ng-model="host.long_desc.description"/>
 		</div>
 		<a class="ok-box" ng-click="editHost()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 	</div>

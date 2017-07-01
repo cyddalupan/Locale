@@ -5,13 +5,23 @@
 	</div>
 	<div class="add-event-admin-body">
 		<div class="add-event-admin-input">
-			Featured?<input type="checkbox">
+			<h5>FEATURED?</h5>
+			<div class="checkboxThree">
+				<input 
+				type="checkbox" 
+				ng-model="event.is_featured" 
+				id="checkboxThreeInput" 
+				ng-true-value="1"
+       			ng-false-value="0"
+				/>
+				<label for="checkboxThreeInput"></label>
+			</div>
 		</div>
 		<div class="add-event-admin-input">
 			<input placeholder="NAME" type="text" value="" ng-model="event.event_name"/>
 		</div>
 		<div class="add-event-admin-input">
-			<input placeholder="DESCRIPTION" type="text" value="" ng-model="event.long_description"/>
+			<input placeholder="DESCRIPTION" type="text" value="" ng-model="event.long_desc.description"/>
 		</div>
 		<div class="add-event-admin-input">
 			<input placeholder="SHORT-DESCRIPTION" type="text" value="" ng-model="event.short_description"/>

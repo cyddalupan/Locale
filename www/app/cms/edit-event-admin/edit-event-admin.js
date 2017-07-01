@@ -70,7 +70,7 @@ app.controller('editEventadminController', function($scope, $http, $cookies, $lo
 				'event_name':$scope.event.event_name,
 				'img_url':$scope.event.img_url,
 				'short_description':$scope.event.short_description,
-				'description':$scope.event.long_description,
+				'description':$scope.event.long_desc.description,
 				'category_id':$scope.event.category_id,
 				'host_id':$scope.event.host_id,
 				'position_sort':$scope.event.position_sort,

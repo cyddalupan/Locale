@@ -42,6 +42,9 @@ app.controller('editHostadminController', function($scope, $http, $cookies, $loc
 				'host_id':$scope.host_id,
 				'name':$scope.host.name,
 				'img_url':$scope.host.img_url,
+				'facebook':$scope.host.facebook,
+				'instagram':$scope.host.instagram,
+				'twitter':$scope.host.twitter,
 				'short_description':$scope.host.short_description,
 				'long_description':$scope.host.long_description,
 				'google_map_embed':$scope.host.google_map_embed

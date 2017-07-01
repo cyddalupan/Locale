@@ -1,7 +1,7 @@
 app.controller('addHostadminController', function($scope, $http, $cookies, $location) {
     $scope.$parent.hideNav = 1;
     $scope.mapEmbed = '';
-
+	$scope.host = '';
 	// Check if user is logged
     if ($cookies.get('user_type_id') < 4){
 		//user is correct
@@ -15,17 +15,19 @@ app.controller('addHostadminController', function($scope, $http, $cookies, $loca
     $scope.addHost = function () {
        $http({
 			method: 'POST',
-			url: api_url+'create_admin',
+			url: api_url+'create_host',
 			data:{
                 'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
 				'host_id':$scope.host_id,
-				'username':$scope.host.name,
-				'password':$scope.host.img_url,
-				'password_confirmation':$scope.host.short_description,
-				'fullname':$scope.host.long_description,
-				'email':$scope.host.google_map_embed,
-				'img':$scope.admin.img
+				'name':$scope.host.name,
+				'img_url':$scope.host.img_url,
+				'facebook':$scope.host.facebook,
+				'instagram':$scope.host.instagram,
+				'twitter':$scope.host.twitter,
+				'short_description':$scope.host.short_description,
+				'long_description':$scope.host.long_description,
+				'google_map_embed':$scope.host.google_map_embed
 			}
 		}).then(function successCallback(response) {
 
@@ -34,7 +36,7 @@ app.controller('addHostadminController', function($scope, $http, $cookies, $loca
             } else {
                 alert(response.data.message);
             }
-                console.log(response)
+            console.log(response)
 		}, function errorCallback(response) {
 
 		});

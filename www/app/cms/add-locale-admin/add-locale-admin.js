@@ -13,16 +13,16 @@ app.controller('addLocaleadminController', function($scope, $http, $cookies, $lo
     $scope.addAdmin = function () {
        $http({
 			method: 'POST',
-			url: api_url+'create_host',
+			url: api_url+'create_admin',
 			data:{
                 'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
-				'host_id':$scope.host_id,
-				'name':$scope.host.name,
-				'img_url':$scope.host.img_url,
-				'short_description':$scope.host.short_description,
-				'long_description':$scope.host.long_description,
-				'google_map_embed':$scope.host.google_map_embed
+				'username':$scope.admin.username,
+				'password':$scope.admin.password,
+				'password_confirmation':$scope.admin.password_confirmation,
+				'fullname':$scope.admin.fullname,
+				'email':$scope.admin.email,
+				'img':$scope.admin.img
 			}
 		}).then(function successCallback(response) {
 

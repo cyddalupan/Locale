@@ -76,7 +76,7 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/cms/event-list-admin/event-list-admin.html',
 			controller  : 'eventListadminController'
 		})
-		.when('/edit-locale-admin', {
+		.when('/edit-locale-admin/:locale_admin', {
 			templateUrl : 'app/cms/edit-locale-admin/edit-locale-admin.html',
 			controller  : 'editLocaleadminController'
 		})
