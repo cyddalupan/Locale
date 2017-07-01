@@ -1,0 +1,118 @@
+.locale-admin-shell {
+    position: fixed;
+	display: block;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: scroll;
+    min-width: 100%;
+}
+.locale-titlebar {
+    position: relative;
+    height: 58px;
+    width: 100%;
+    background-color: rgba(48, 48, 48, 0.7)
+}
+.locale-titlebar h2{
+    font-size: 22px;
+    margin-top: 14px;
+    text-align: center
+}
+.add-locale-admin{
+    padding: 0px;
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 10px;
+}
+.add-locale-admin h5{
+    font-size: 8px;
+    white-space: nowrap;
+    margin-top: 13px;
+    margin:10px 0px 0px auto !important;
+    text-align: center;
+    display: block;
+    color: #fff;
+}
+.add-locale-admin i{
+    margin:0px auto !important;
+    font-size: 33px;
+    margin-top: 13px;
+    text-align: center;
+    display: block;
+    color: #fff;
+}
+.locale-admin-list-shell{
+    position: absolute;
+    top:80px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+}
+.locale-admin-name {
+    background-color: rgba(48, 48, 48, 0.7);
+    display: block;
+    height: 85px;
+    position: relative;
+    border-bottom: 1px solid #6c6c6c;
+}
+.profile-image {
+    background-color: #fff;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    left: 30px;
+    top:7px;
+}
+.locale-admin-name h4 {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    padding: 0px;
+    margin: 0px;
+}
+.locale-admin-name h3 {
+    position: absolute;
+    top: 10px;
+    left:111px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+}
+.locale-admin-name p {
+    position: absolute;
+    bottom: 38px;
+    left:111px;
+    padding: 0px;
+    margin: 0px;
+    color: #c2c2c2;
+    font-size: 11px;
+}
+.locale-admin-name h5 {
+    position: absolute;
+    bottom: 25px;
+    left:111px;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 11px;
+}
+.delete-button{
+    position: absolute;
+    bottom: 3px;
+    right:12px;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    font-size: 25px;
+}
+.edit-button{
+    position: absolute;
+    bottom: 0px;
+    right:40px;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    font-size: 26px;
+}
