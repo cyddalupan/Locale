@@ -1,6 +1,13 @@
 app.controller('mainController', function($scope, $location, $http, $cookies) {
 	$scope.hideNav = 0;
 	$scope.localSettings = false;
+
+    if ($cookies.get('user_type_id') < 4){
+		$scope.adminOnly = 1
+	}else{
+		$scope.adminOnly = 0
+	}
+
 	$scope.localSettings = function() {
 		$scope.localsettingsActive = !$scope.localsettingsActive;
 	}
@@ -21,4 +28,5 @@ app.controller('mainController', function($scope, $location, $http, $cookies) {
 			$scope.localsettingsActive = !$scope.localsettingsActive;
 		});
 	}
+	
 });

@@ -28,7 +28,7 @@
 .add-event-admin-input {
   background-color: rgba(255, 255, 255, .1);
   width: 58%;
-  margin: 10px auto !important;
+  margin: 0px auto 10px auto !important;
   padding: 1px 0 1px 0 !important;
   position: relative;
   display: block;
@@ -161,7 +161,7 @@ select {
 	top: 12px;
 	left: 84px;
 	height: 2px;
-	color: #111;
+	color: #ff0000;
 	font-size: 16px;
 }
 .checkboxThree label {
@@ -175,7 +175,7 @@ select {
 	top: 9px;
 	z-index: 1;
 	left: 12px;
-	background: #ddd;
+	background: #ff0000;;
 }
 .checkboxThree input[type=checkbox]:checked + label {
 	left: 60px !important;

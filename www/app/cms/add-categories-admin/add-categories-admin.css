@@ -18,7 +18,11 @@
   padding: 0px;
   color: #fff;
 }
-
+.add-categories-titlebar h2 {
+  text-align: center;
+  font-size: 23px;
+  margin-top: 32px;
+}
 .add-categories-input input[type=text] {
   height:17px;
   border: 0;
@@ -49,7 +53,8 @@
   background-color: rgba(0, 0, 0, .4);
   width: 100%;
   margin: auto;
-  display: block
+  display: block;
+  padding-top: 20px;
 }
 .add-categories-body a {
   font-size: 60px;

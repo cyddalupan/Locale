@@ -15,9 +15,6 @@
 			<input placeholder="NAME" type="text" value="" ng-model="event.event_name"/>
 		</div>
 		<div class="add-event-admin-input">
-			<input placeholder="DESCRIPTION" type="text" value="" ng-model="event.long_desc.description"/>
-		</div>
-		<div class="add-event-admin-input">
 			<input placeholder="SHORT-DESCRIPTION" type="text" value="" ng-model="event.short_description"/>
 		</div>
 		<div class="add-event-admin-input">
@@ -41,6 +38,12 @@
 		<div class="input-imgurl">
 			<input placeholder="IMAGE URL" type="text" value="" ng-model="event.img_url"/>
 			<div class="add-profile-image"><img ng-src="{{event.img_url}}" alt="" class="add-profile-image-inner"></div>
+		</div>
+		<div class="add-event-admin-input custom-input">
+			<textarea
+				ng-model="event.long_desc.description"
+				placeholder="LONG-DESCRIPTION">
+			</textarea>
 		</div>
 		<a class="ok-box" ng-click="addEvent()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 	</div>

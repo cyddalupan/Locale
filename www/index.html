@@ -56,11 +56,12 @@
     </head>
     <body ng-controller="mainController">
         <div class="locale-header row" ng-hide="hideNav">
-            <a>
                 <div class="responsive-circle" ng-click="localSettings()">
                     <div class="circle-inner"><span class="glyphicon glyphicon-cog settings-icon-locale-1" aria-hidden="true" id="!locale-settings-default" ng-hide="localsettingsActive"></span><i class="fa fa-times settings-icon-locale-1" id="locale-settings-close" aria-hidden="true" ng-show="localsettingsActive"></i></div>
                 </div>
-            </a>
+                <div class="admin-circle responsive-circle" ng-show="adminOnly">
+                    <a href="#/cms-home"><div class="circle-inner">A</div></a>
+                </div>
             <h1>LOCALE</h1>
         </div>
         <div class="locale-body" ng-hide="hideNav" ng-class="{'locale-blur': localsettingsActive }">
@@ -86,8 +87,7 @@
 
         <div class="setting-background row" ng-show="localsettingsActive">
             <div class="setting-shell row">
-                <h3>Settings</h3>
-                <hr>
+                <h3>SETTINGS</h3>
                 <a class="setting-menu"><p>Notification and Sound</p></a></br>
                 <a class="setting-menu"><p>Help</p></a></br>
                 <a class="setting-menu"><p>About</p></a></br>

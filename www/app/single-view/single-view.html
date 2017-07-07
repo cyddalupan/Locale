@@ -14,10 +14,15 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div class="single-view-host-img"><img ng-src="{{host.img_url}}" alt=""></div>
-    <div class="facebook-circle non-responding-circle"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-    <div class="instagram-circle non-responding-circle"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-    <div class="twitter-circle non-responding-circle"><i class="fa fa-twitter" aria-hidden="true"></i>
-</div>
+    <a ng-click="changeSiteFacebook()" ng-if="host.facebook" class="facebook-circle non-responding-circle">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+    </a>
+    <a  ng-click="changeSiteInstagram()" ng-if="host.instagram"class="instagram-circle non-responding-circle">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+    </a>
+    <a ng-click="changeSiteTwitter()" ng-if="host.twitter" class="twitter-circle non-responding-circle">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+    </a>
     <div class="single-view-descrition">
         <h5>{{host.name}}</h5>
         <p>{{host.short_description}}</p>

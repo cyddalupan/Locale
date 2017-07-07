@@ -11,13 +11,13 @@
 			<input placeholder="DESCRIPTION" type="text" value="" ng-model="host.short_description"/>
 		</div>
 		<div class="add-host-locale-admin-input">
-			<input placeholder="FACEBOOK LINK" type="text" value="" ng-model="host.facebook"/>
+			<input placeholder="FACEBOOK LINK" type="url" value="" ng-model="host.facebook"/>
 		</div>
 		<div class="add-host-locale-admin-input">
-			<input placeholder="INSTAGRAM LINK" type="text" value="" ng-model="host.instagram"/>
+			<input placeholder="INSTAGRAM LINK" type="url" value="" ng-model="host.instagram"/>
 		</div>
 		<div class="add-host-locale-admin-input">
-			<input placeholder="TWITTER LINK" type="text" value="" ng-model="host.twitter"/>
+			<input placeholder="TWITTER LINK" type="url" value="" ng-model="host.twitter"/>
 		</div>
 		<div class="input-imgurl">
 			<input placeholder="IMAGE URL" type="text" value="" ng-model="host.img_url"/>
@@ -31,8 +31,11 @@
   				</div>
 			</div>
 		</div>
-		<div class="add-host-locale-admin-input">
-			<input placeholder="LONG-DESCRIPTION" type="text" value="" ng-model="host.long_desc.description"/>
+		<div class="add-host-locale-admin-input custom-input">
+			<textarea
+				ng-model="host.long_desc.description"
+				placeholder="LONG-DESCRIPTION">
+			</textarea>
 		</div>
 		<a class="ok-box" ng-click="addHost()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 	</div>
