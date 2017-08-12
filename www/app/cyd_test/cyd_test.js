@@ -1027,6 +1027,9 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 				'hash':$cookies.get('hash'),
 				'name':'test host'+$scope.currdate,
 				'img_url':'http://localhost/phonegap/locale/www/api/public/seed/event/7.jpg',
+				'facebook':'https://www.facebook.com/search/top/?q=sofia%20tawasil',
+				'instagram':'https://www.instagram.com/krislacanienta/',
+				'twitter':'https://twitter.com/SinghShene',
 				'short_description':'short desc tes',
 				'long_description':'long desc to text',
 				'google_map_embed':'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.588934923989!2d121.02531531454524!3d14.565483989824811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9073750cc15%3A0xc3a53c8ba2ae6cc0!2sCentury+City+Mall!5e0!3m2!1sen!2sph!4v1497205778482" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
@@ -1075,6 +1078,9 @@ app.controller('cydTestController', function($scope,$http,$cookies) {
 				'host_id':$scope.test_host_id,
 				'name':'edited test host'+$scope.currdate,
 				'img_url':'http://localhost/phonegap/locale/www/api/public/seed/event/7.jpg',
+				'facebook':'https://www.facebook.com/search/top/?q=sofia%20tawasil',
+				'instagram':'https://www.instagram.com/krislacanienta/',
+				'twitter':'https://twitter.com/SinghShene',
 				'short_description':'edited short desc tes',
 				'long_description':'edited long desc to text',
 				'google_map_embed':'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.588934923989!2d121.02531531454524!3d14.565483989824811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9073750cc15%3A0xc3a53c8ba2ae6cc0!2sCentury+City+Mall!5e0!3m2!1sen!2sph!4v1497205778482" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
