@@ -18,6 +18,7 @@ app.controller('categoriesController', function($scope, $cookies, $http, $locati
 		}
 	}).then(function successCallback(response) {
 		$scope.categories = response.data.categories;
+		console.log($scope.categories)
 	});
 
 

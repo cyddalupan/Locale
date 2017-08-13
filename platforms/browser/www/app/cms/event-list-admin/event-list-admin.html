@@ -17,7 +17,7 @@
 				<p>{{$index + 1}}.{{event.event_name}}</p>
 				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
 				<a href="#/edit-event-admin/{{event.id}}"><i class="fa fa-pencil-square-o edit-button-events" aria-hidden="true"></i></a>
-				<i class="fa fa-trash-o delete-button-events" aria-hidden="true"></i>
+				<i ng-click="deleteEvent(event.id)" class="fa fa-trash-o delete-button-events" aria-hidden="true"></i>
 			</div>
 		</div>
 	</div>

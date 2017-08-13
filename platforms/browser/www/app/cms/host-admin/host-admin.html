@@ -1,21 +1,21 @@
-<div class="host-admin-shell">
+<div class="locale-admin-shell">
 	<div class="locale-titlebar search-all">
-		<h2>HOST</h2>
 		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
-		<div class="add-host-admin">
+		<h2 class="col-xs-8">Host Admin</h2>
+		<div class="add-locale-admin">
 			<a href="#/add-host-admin">
-				<h5>Create New Host</h5>
+				<h5>Add Host Admin</h5>
 				<i class="fa fa-plus-circle" aria-hidden="true"></i>
 			</a>
 		</div>
 		<input type="text" placeholder="SEARCH" ng-model="searchAll">
 	</div>
-	<div class="host-admin-list-shell">
-		<div class="host-admin-name" ng-repeat="host in getHosts | filter:searchAll">
-			<div class="profile-image"><img ng-src="{{host.img_url}}" alt="" class="profile-image-inner"></div>
+	<div class="locale-admin-list-shell">
+		<div class="locale-admin-name" ng-repeat="host in getHost">
+			<div class="profile-image"><img ng-src="{{host.img}}" alt="" class="profile-image-inner"></div>
 			<h4>{{$index + 1}}</h4>
-			<h3>{{host.name}}</h3>
-			<p>{{host.short_description}}</p>
+			<h3>{{host.fullname}}</h3>
+			<p>{{host.email}}</p>
 			<a ng-click="deleteHost(host.id)" class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 			<a href="#/edit-host-admin/{{host.id}}" class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 		</div>

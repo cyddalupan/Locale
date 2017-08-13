@@ -34,11 +34,14 @@
     width: 100%;
     display: block;
     border-top: 3px solid #fff;
+    overflow: hidden;
 }
 .locale-single-view-image img {
-    position:absolute;
+    position: absolute;
     height: 100%;
-	width: 100%
+    width: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .navbar-locale-handler-single-view {
@@ -147,4 +150,131 @@
     position: absolute;
     height: 100%;
     width: 100%;
+}
+.locale-modal {
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.87);
+    height: 100%;
+    -webkit-animation-name: zoomIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: zoomIn;
+    animation-duration: 0.4s;
+    min-width: 100%;
+    z-index: 99999999;
+    display: none;
+}
+.locale-modal img {
+    position: absolute;
+    width: 100%;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.locale-modal i {
+    position: absolute;
+    top:20px;
+    right: 20px;
+    font-size: 30px;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.modal-display{
+    display: block;
+}
+@-webkit-keyframes slideIn {
+    from {bottom: -100%; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -100%; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+.hidenow {
+  -webkit-animation:0.4s zoomOut;
+  animation:0.4s zoomOut;
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+.scrollable-shell{
+    overflow: scroll;
+}
+
+@media screen and (max-width: 300px){
+    .non-responding-circle i {
+        font-size: 15px;
+        margin: 10px auto auto 12px;
+        color: #fff;
+    }
+    .non-responding-circle {
+        height: 40px;
+        width: 40px;
+        bottom: 97px;
+    }
+    .facebook-circle i {
+        margin: 10px auto auto 14px !important;
+    }
+    .instagram-circle {
+        left: 180px;
+    }
+    .twitter-circle {
+        left: 225px;
+    }
 }

@@ -66,11 +66,11 @@ app.controller('editEventadminController', function($scope, $http, $cookies, $lo
 			data:{
                 'user_id':$cookies.get('user_id'),
                 'hash':$cookies.get('hash'),
-				'event_id':$scope.event.event_id,
+				'event_id':$scope.event_id,
 				'event_name':$scope.event.event_name,
 				'img_url':$scope.event.img_url,
 				'short_description':$scope.event.short_description,
-				'description':$scope.event.long_desc.description,
+				'long_description':$scope.event.long_desc.description,
 				'category_id':$scope.event.category_id,
 				'host_id':$scope.event.host_id,
 				'position_sort':$scope.event.position_sort,

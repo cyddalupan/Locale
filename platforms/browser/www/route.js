@@ -12,9 +12,13 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/categories/categories.html',
 			controller  : 'categoriesController'
 		})
-		.when('/contact', {
-			templateUrl : 'app/contact/contact.html',
-			controller  : 'contactController'
+		.when('/categories-filter/:category_id', {
+			templateUrl : 'app/categories-filter/categories-filter.html',
+			controller  : 'categoriesFilterController'
+		})
+		.when('/trend', {
+			templateUrl : 'app/trend/trend.html',
+			controller  : 'trendController'
 		})
 		.when('/login', {
 			templateUrl : 'app/login/login.html',
@@ -28,7 +32,7 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/single-view/single-view.html',
 			controller  : 'appsingleViewController',
 		})
-		.when('/map-view', {
+		.when('/map-view/:host_id', {
 			templateUrl : 'app/map-view/map-view.html',
 			controller  : 'appmapViewController',
 		})
@@ -64,6 +68,10 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/cms/add-locale-admin/add-locale-admin.html',
 			controller  : 'addLocaleadminController'
 		})
+		.when('/add-locale-user', {
+			templateUrl : 'app/cms/add-locale-user/add-locale-user.html',
+			controller  : 'addLocaleuserController'
+		})
 		.when('/add-host-admin', {
 			templateUrl : 'app/cms/add-host-admin/add-host-admin.html',
 			controller  : 'addHostadminController'
@@ -76,9 +84,13 @@ app.config(function($routeProvider) {
 			templateUrl : 'app/cms/event-list-admin/event-list-admin.html',
 			controller  : 'eventListadminController'
 		})
-		.when('/edit-locale-admin', {
+		.when('/edit-locale-admin/:locale_admin', {
 			templateUrl : 'app/cms/edit-locale-admin/edit-locale-admin.html',
 			controller  : 'editLocaleadminController'
+		})
+		.when('/edit-locale-user/:locale_user', {
+			templateUrl : 'app/cms/edit-locale-user/edit-locale-user.html',
+			controller  : 'editLocaleuserController'
 		})
 		.when('/add-event-admin', {
 			templateUrl : 'app/cms/add-event-admin/add-event-admin.html',
@@ -91,6 +103,18 @@ app.config(function($routeProvider) {
 		.when('/locale-user', {
 			templateUrl : 'app/cms/locale-user/locale-user.html',
 			controller  : 'localeUserController'
+		})
+		.when('/event-host', {
+			templateUrl : 'app/cms/event-host/event-host.html',
+			controller  : 'eventHostController'
+		})
+		.when('/add-event-host', {
+			templateUrl : 'app/cms/add-event-host/add-event-host.html',
+			controller  : 'addEventHostController'
+		})
+		.when('/edit-event-host/:host_id', {
+			templateUrl : 'app/cms/edit-event-host/edit-event-host.html',
+			controller  : 'editEventHostController'
 		})
 		.when('/cyd_test', {
 			templateUrl : 'app/cyd_test/cyd_test.html',

@@ -28,9 +28,11 @@ app.controller('apploginController', function($scope, $http, $location, $cookies
                 $cookies.put('img',response.data.img);
                 if (response.data.user_type_id < 4){
                     $location.path('/cms-home');
+                    $scope.$parent.adminOnly = 1;
                 }else {
                     if (response.data.user_type_id = 4){
                         $location.path('/');
+                        $scope.$parent.adminOnly = 0;
                     }
                 }
             }

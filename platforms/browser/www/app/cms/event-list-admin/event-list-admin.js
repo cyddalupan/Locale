@@ -22,5 +22,22 @@ app.controller('eventListadminController', function($scope, $http, $cookies, $lo
             console.log(response);
         });
     }
+
+	$scope.deleteEvent = function(event_id){
+		if(confirm('Are you sure you want to Delete?')){
+			$http({
+				method: 'POST',
+				url: api_url+'delete_event',
+				data: {
+					'user_id':$cookies.get('user_id'),
+					'hash':$cookies.get('hash'),
+					'event_id':event_id
+				}
+			}).then(function successCallback(response) {
+				console.log(response);
+				$scope.getAllEvents();
+			});
+		}
+	}
 	$scope.getAllEvents();
 });

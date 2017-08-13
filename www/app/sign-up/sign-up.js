@@ -4,6 +4,9 @@ app.controller('appsignUpController', function($scope, $location, $http) {
 
 
     $scope.register_user = function(){
+		$scope.register.email = $scope.register.username;
+		$scope.register.fullname = $scope.register.username;
+		$scope.register.img = $scope.register.username;
 		$http({
 			method: 'POST',
 			url: api_url+'register_user',
@@ -16,11 +19,7 @@ app.controller('appsignUpController', function($scope, $location, $http) {
 				'img' : $scope.register.img
 			}
 		}).then(function successCallback(response) {
-
-            console.log(response)
-			$scope.register_user_id = response.data.user.id;
-
-
+            console.log(response);
 		});
 	}
 });

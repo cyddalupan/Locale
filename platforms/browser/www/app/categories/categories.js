@@ -1,5 +1,13 @@
 app.controller('categoriesController', function($scope, $cookies, $http, $location) {
 	$scope.$parent.hideNav = 0;
+
+	// Check if user is logged
+    if ($cookies.get('user_type_id') <= 4){
+		//user is correct
+	}else{
+		$location.path('/login');
+	}
+
 	//Get all Categories
 	$http({
 		method: 'POST',
@@ -10,6 +18,7 @@ app.controller('categoriesController', function($scope, $cookies, $http, $locati
 		}
 	}).then(function successCallback(response) {
 		$scope.categories = response.data.categories;
+		console.log($scope.categories)
 	});
 
 

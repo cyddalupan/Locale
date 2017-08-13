@@ -22,6 +22,9 @@ app.controller('cmshomeController', function($scope, $location, $cookies, $http)
 			//delete cookie on logout
 			$cookies.remove('user_id');
 			$cookies.remove('hash');
+			$cookies.remove('fullname');
+			$cookies.remove('img');
+			$cookies.remove('user_type_id');
 			$location.path('/login')
 			
 		});

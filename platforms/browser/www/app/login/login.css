@@ -186,11 +186,11 @@ input::placeholder {
         width: 200px;
     }
     .locale-login-button {
-        font-size: 3vw;
+        font-size: 2vw;
         margin-top: 10px;
     }
     .locale-signup-button {
-        font-size: 3vw;
+        font-size: 2vw;
         margin-top: 10px;
     }
 }

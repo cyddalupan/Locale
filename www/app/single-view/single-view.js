@@ -1,9 +1,20 @@
-app.controller('appsingleViewController', function($scope, $http, $cookies, $location, $routeParams, $window) {
+app.controller('appsingleViewController', function($scope, $http, $cookies, $location, $routeParams, $window,$timeout) {
     $scope.$parent.hideNav = 1;
 	$scope.event_id = $routeParams.event_id;
     $scope.event = '';
     $scope.host = '';
+    $scope.modalExit = 0;
 
+    $scope.modalView = function() {
+        $scope.modalExit = 0;
+		$scope.modalDisplay = 1;
+    }
+    $scope.modalHide = function() {
+        $scope.modalExit = 1;
+        $timeout(function () { 
+            $scope.modalDisplay = 0;
+        }, 250);
+	}
     // Check if user is logged
     if ($cookies.get('user_type_id') <= 4){
 		//user is correct
@@ -54,4 +65,5 @@ app.controller('appsingleViewController', function($scope, $http, $cookies, $loc
     $scope.changeSiteTwitter = function() {
         $window.location.href = $scope.host.twitter;
     }
+
 });

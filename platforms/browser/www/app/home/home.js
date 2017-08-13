@@ -9,15 +9,23 @@ app.controller('homeController', function($scope, $http, $cookies, $location) {
 		$location.path('/login');
 	}
 
-	$http({
-		method: 'POST',
-		url: api_url+'all_events',
-		data:{
-			'user_id':$cookies.get('user_id'),
-			'hash':$cookies.get('hash')
-		}
-	}).then(function successCallback(response) {
-		$scope.events = response.data.events;
-		console.log(response);
-	});
+	$scope.getAllEvents = function() {
+		$http({
+			method: 'POST',
+			url: api_url+'all_events',
+			data:{
+				'user_id':$cookies.get('user_id'),
+				'hash':$cookies.get('hash')
+			}
+		}).then(function successCallback(response) {
+			$scope.events = response.data.events;
+			console.log(response);
+			if ($cookies.get('user_type_id') < 4){
+				$scope.$parent.adminOnly = 1;
+			}else {
+				$scope.$parent.adminOnly = 0;
+			}
+		});
+	}
+	$scope.getAllEvents()
 });

@@ -1,0 +1,23 @@
+<div class="host-admin-shell">
+	<div class="locale-titlebar search-all">
+		<h2>HOST</h2>
+		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+		<div class="add-host-admin">
+			<a href="#/add-event-host">
+				<h5>Add Event Host</h5>
+				<i class="fa fa-plus-circle" aria-hidden="true"></i>
+			</a>
+		</div>
+		<input type="text" placeholder="SEARCH" ng-model="searchAll">
+	</div>
+	<div class="host-admin-list-shell">
+		<div class="host-admin-name" ng-repeat="host in getHosts | filter:searchAll">
+			<div class="profile-image"><img ng-src="{{host.img_url}}" alt="" class="profile-image-inner"></div>
+			<h4>{{$index + 1}}</h4>
+			<h3>{{host.name}}</h3>
+			<p>{{host.short_description}}</p>
+			<a ng-click="deleteHost(host.id)" class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+			<a href="#/edit-event-host/{{host.id}}" class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</div>

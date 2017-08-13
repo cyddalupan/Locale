@@ -1,4 +1,4 @@
-.edit-host-locale-admin-shell {
+.edit-locale-admin-shell {
   position:fixed;
   top: 0;
   left: 0;
@@ -6,7 +6,7 @@
   bottom: 0;
   display: block;
 }
-.edit-host-locale-admin-titlebar {
+.edit-locale-admin-titlebar {
   position:relative;
   top: 0;
   left: 0;
@@ -18,24 +18,24 @@
   padding: 0px;
   color: #fff;
 }
-.edit-host-locale-admin-titlebar h2{
+.edit-locale-admin-titlebar h2{
   display: block;
   position: absolute;
   width: 100%;
   text-align: center;
   font-size: calc(20px + 2vw);
 }
-.edit-host-locale-admin-input {
+.edit-locale-admin-input {
   background-color: rgba(255, 255, 255, .1);
   width: 58%;
   margin: 0px auto;
   padding: .2vw 0 0 0;
 }
-.edit-host-locale-admin-input input:focus {
+.edit-locale-admin-input input:focus {
   outline: none;
   box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
 }
-.edit-host-locale-admin-input input {
+.edit-locale-admin-input input {
   background: transparent !important;
   display: block;
   padding: 0px;
@@ -72,7 +72,7 @@
   outline: none;
   box-shadow: 0px 4px 0px 0px #4EA6EA, 0px 4px 0px 0px #4EA6EA;
 }
-.edit-host-profile-image {
+.edit-profile-image {
   background-color: #fff;
   height: 16vw;
   width: 16vw;
@@ -80,13 +80,13 @@
   right: 2px;
   top: 1vw;
 }
-.edit-host-profile-image img {
+.edit-profile-image img {
   background-color: #000;
   height: 100%;
   width: 100%;
   position: absolute;
 }
-.edit-host-locale-admin-body {
+.edit-locale-admin-body {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -97,9 +97,8 @@
   padding-top: 3vw; 
   margin: auto;
   display: block;
-  overflow: scroll;
 }
-.edit-host-locale-admin-body a {
+.edit-locale-admin-body a {
   font-size: 60px;
   color: rgba(174, 213, 129, 1);
   width: 100%;
@@ -117,83 +116,4 @@
   top: 13px;
   left: 13px;
   font-size: 30px;
-  z-index: 1 !important;
-}
-.mapview-host iframe {
-  display: block;
-  height: 10% !important;
-  width: 95% !important;
-  margin: auto;
-}
-.mapview-shell-2{
-  display: block;
-  height: 10% !important;
-  width: 95% !important;
-  margin: auto;
-}
-.mapview-host img {
-  margin: auto;
-  display: block;
-  height: 9% !important;
-  width: 95% !important;
-}
-.mapview-shell {
-  background-color: rgba(255, 255, 255, .1);
-  width: 58%;
-  margin: 10px auto;
-  padding: .2vw 0 0 0;
-}
-.mapview-shell input{  
-  background: transparent !important;
-  display: block;
-  padding: 0px;
-  color: #fff !important;
-  height:100%;
-  border: 0;
-  font-size: 3vw;
-  margin:3vw auto;
-  width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, .4);
-}
-
-
-
-
-
-.slide-animate-container {
-  position:relative;
-  background:white;
-  border:1px solid black;
-  height:40px;
-  overflow:hidden;
-}
-
-.slide-animate {
-  padding:10px;
-}
-
-.slide-animate.ng-enter, .slide-animate.ng-leave {
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  display:block;
-  padding:10px;
-}
-
-.slide-animate.ng-enter {
-  top:-50px;
-}
-.slide-animate.ng-enter.ng-enter-active {
-  top:0;
-}
-
-.slide-animate.ng-leave {
-  top:0;
-}
-.slide-animate.ng-leave.ng-leave-active {
-  top:50px;
 }

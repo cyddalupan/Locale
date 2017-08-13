@@ -34,13 +34,13 @@ app.controller('editLocaleadminController', function($scope, $http, $cookies, $l
 			data:{
                 'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
-				'get_user_id':$scope.admin.name,
-				'username':$scope.admin.img_url,
-				'password':$scope.admin.facebook,
-				'password_confirmation':$scope.admin.instagram,
-				'fullname':$scope.admin.twitter,
-				'email':$scope.admin.short_description,
-				'img':$scope.admin.long_description,
+				'get_user_id':$scope.admin.id,
+				'username':$scope.admin.username,
+				'password':$scope.admin.password,
+				'password_confirmation':$scope.admin.password_confirmation,
+				'fullname':$scope.admin.fullname,
+				'email':$scope.admin.email,
+				'img':$scope.admin.img,
 			}
 		}).then(function successCallback(response) {
 

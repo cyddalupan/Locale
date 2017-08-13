@@ -24,6 +24,9 @@ app.controller('mainController', function($scope, $location, $http, $cookies) {
 			//delete cookie on logout
 			$cookies.remove('user_id');
 			$cookies.remove('hash');
+			$cookies.remove('fullname');
+			$cookies.remove('img');
+			$cookies.remove('user_type_id');
 			$location.path('/login')
 			$scope.localsettingsActive = !$scope.localsettingsActive;
 		});

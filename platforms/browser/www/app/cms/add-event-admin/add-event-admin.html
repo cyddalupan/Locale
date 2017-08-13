@@ -5,13 +5,14 @@
 	</div>
 	<div class="add-event-admin-body">
 		<div class="add-event-admin-input">
-			Featured? <input type="checkbox">
+			<h5>FEATURED?</h5>
+			<div class="checkboxThree">
+				<input type="checkbox" ng-model="event.is_featured" id="checkboxThreeInput" name=""/>
+				<label for="checkboxThreeInput"></label>
+			</div>
 		</div>
 		<div class="add-event-admin-input">
 			<input placeholder="NAME" type="text" value="" ng-model="event.event_name"/>
-		</div>
-		<div class="add-event-admin-input">
-			<input placeholder="DESCRIPTION" type="text" value="" ng-model="event.long_description"/>
 		</div>
 		<div class="add-event-admin-input">
 			<input placeholder="SHORT-DESCRIPTION" type="text" value="" ng-model="event.short_description"/>
@@ -20,16 +21,14 @@
 			<input placeholder="POSITION" type="text" value="" ng-model="event.position_sort"/>
 		</div>
 		<div class="add-event-admin-input">
-			<input placeholder="DATE" type="date" value="" ng-model="event.event_date"/>
+			<input placeholder="DATE" type="text" value="" ng-model="event.event_date"/>
 		</div>
 		<div class="add-event-admin-input">
 			<select
 				ng-options="Host.id*1 as Host.name for Host in eventHosts"
 				ng-model="event.host_id">
 			</select>
-
 		</div>
-
 		<div class="add-event-admin-input">
 			<select
 				ng-options="Category.id*1 as Category.name for Category in eventCategory"
@@ -39,6 +38,12 @@
 		<div class="input-imgurl">
 			<input placeholder="IMAGE URL" type="text" value="" ng-model="event.img_url"/>
 			<div class="add-profile-image"><img ng-src="{{event.img_url}}" alt="" class="add-profile-image-inner"></div>
+		</div>
+		<div class="add-event-admin-input custom-input">
+			<textarea
+				ng-model="event.long_desc.description"
+				placeholder="LONG-DESCRIPTION">
+			</textarea>
 		</div>
 		<a class="ok-box" ng-click="addEvent()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 	</div>

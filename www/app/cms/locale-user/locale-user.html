@@ -1,39 +1,23 @@
 <div class="locale-admin-shell">
 	<div class="locale-titlebar search-all">
 		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
-		<h2 class="col-xs-12">Users List</h2>
+		<h2 class="col-xs-8">User</h2>
 		<div class="add-locale-admin">
+			<a href="#/add-locale-user">
+				<h5>Create User</h5>
+				<i class="fa fa-plus-circle" aria-hidden="true"></i>
+			</a>
 		</div>
 		<input type="text" placeholder="SEARCH" ng-model="searchAll">
 	</div>
 	<div class="locale-admin-list-shell">
-		<div class="locale-admin-name">
-			<div class="profile-image"></div>
-			<h4>1</h4>
-			<h3>Paulo Contis</h3>
-			<p>123 Libis Barangay 18</p>
-			<h5>Caloocan City</h5>
-			<a class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-			<a class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-		</div>
-				<div class="locale-admin-name">
-			<div class="profile-image"></div>
-			<h4>1</h4>
-			<h3>Paulo Contis</h3>
-			<p>123 Libis Barangay 18</p>
-			<h5>Caloocan City</h5>
-			<a class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-			<a class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-		</div>
-				<div class="locale-admin-name">
-			<div class="profile-image"></div>
-			<h4>1</h4>
-			<h3>Paulo Contis</h3>
-			<p>123 Libis Barangay 18</p>
-			<h5>Caloocan City</h5>
-			<a class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-			<a class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+		<div class="locale-admin-name" ng-repeat="guest in getGuest">
+			<div class="profile-image"><img ng-src="{{guest.img}}" alt="" class="profile-image-inner"></div>
+			<h4>{{$index + 1}}</h4>
+			<h3>{{guest.fullname}}</h3>
+			<p>{{guest.email}}</p>
+			<a ng-click="deleteGuest(guest.id)" class="delete-button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+			<a href="#/edit-locale-user/{{guest.id}}" class="edit-button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 		</div>
 	</div>
-
 </div>

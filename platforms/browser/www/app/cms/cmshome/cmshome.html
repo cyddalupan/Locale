@@ -5,16 +5,22 @@
 	<a href="#/categoriesadmin" class="locale-home-menu col-xs-4" ng-show="userTypeId < 3">
 		<p>Category</p>
 	</a>
-	<a href="#/host-admin" class="locale-home-menu col-xs-4" ng-show="userTypeId < 4">
-		<p>Host</p>
+	<a href="#/host-admin" class="locale-home-menu col-xs-4 host-admin" ng-show="userTypeId < 4">
+		<p>Host Admin</p>
 	</a>
-		<a href="#/locale-user" class="locale-home-menu col-xs-4" ng-show="userTypeId < 3">
+	<a href="#/event-host" class="locale-home-menu col-xs-4" ng-show="userTypeId < 4">
+		<p>Event Host</p>
+	</a>
+	<a href="#/locale-user" class="locale-home-menu col-xs-4" ng-show="userTypeId < 3">
 		<p>Users</p>
 	</a>
 	<a href="#/locale-admin" class="locale-home-menu col-xs-4" ng-show="userTypeId == 1">
 		<p>Admin</p>
 	</a>
-	<a href="" class="locale-home-menu col-xs-4">
+	<a href="#/" class="locale-home-menu col-xs-4">
+		<p>Home</p>
+	</a>
+	<a class="locale-home-menu col-xs-4" ng-click="logoutAll()">
 		<p>Logout</p>
 	</a>
 </div>

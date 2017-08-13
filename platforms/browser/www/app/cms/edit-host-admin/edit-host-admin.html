@@ -1,31 +1,35 @@
-<div class="edit-host-locale-admin-shell">
-	<div class="edit-host-locale-admin-titlebar row">
+<div class="edit-locale-admin-shell">
+	<div class="edit-locale-admin-titlebar row">
 		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
-		<h2>Edit Host</h2>
+		<h2>Edit User</h2>
 	</div>
-	<div class="edit-host-locale-admin-body">
-		<div class="edit-host-locale-admin-input">
-			<input placeholder="NAME" type="text" ng-model="host.name"/>
+	<div class="add-locale-admin-body para-handler">
+		<p>Username</p>
+		<div class="add-locale-admin-input">
+			<input placeholder="USERNAME" type="text" value="" ng-model="user.username"/>
 		</div>
-		<div class="edit-host-locale-admin-input">
-			<input placeholder="DESCRIPTION" type="text" ng-model="host.short_description"/>
+		<p>Password</p>
+		<div class="add-locale-admin-input">
+			<input placeholder="PASSWORD" type="text" value="" ng-model="user.password"/>
 		</div>
+		<p>Confirm Password</p>
+		<div class="add-locale-admin-input">
+			<input placeholder="CONFIRM-PASSWORD" type="text" value="" ng-model="user.password_confirmation"/>
+		</div>
+		<p>Email</p>
+		<div class="add-locale-admin-input">
+			<input placeholder="EMAIL" type="text" value="" ng-model="user.email"/>
+		</div>
+		<p>Fullname</p>
+		<div class="add-locale-admin-input">
+			<input placeholder="FULLNAME" type="text" value="" ng-model="user.fullname"/>
+		</div>
+		<p>Image URL</p>
 		<div class="input-imgurl">
-			<input placeholder="IMAGE URL" type="text" value="" ng-model="host.img_url"/>
-			<div class="edit-host-profile-image"><img ng-src="{{host.img_url}}" alt="" class="edit-host-profile-image-inner"></div>
+			<input placeholder="IMAGE URL" type="text" value="" ng-model="user.img"/>
+			<div class="add-profile-image"><img ng-src="{{user.img}}" alt="" class="add-profile-image-inner"></div>
 		</div>
-		<div class="mapview-shell">
-			<input placeholder="MAP-EMBEDED-URL" type="text" ng-change="mapChange()" ng-model="host.google_map_embed"/>
-			<div class="mapview-shell-2">
-				<div class="mapview-host">
-					<img src="img/three-dots.svg" alt="">
-  				</div>
-			</div>
-		</div>
-		<div class="edit-host-locale-admin-input">
-			<input placeholder="LONG-DESCRIPTION" type="text" value="" ng-model="longdescription"/>
-		</div>
-		<a class="ok-box" ng-click="editHost()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
+		<a class="ok-box" ng-click="editGuest()"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 	</div>
 	<div class="error-message-shell" ng-hide="loginAlertMessage">
         <div class="error-message">{{msg}}</div>
