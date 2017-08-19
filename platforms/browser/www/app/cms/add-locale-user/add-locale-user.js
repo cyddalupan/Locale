@@ -13,7 +13,7 @@ app.controller('addLocaleuserController', function($scope, $http, $cookies, $loc
     $scope.addAdmin = function () {
        $http({
 			method: 'POST',
-			url: api_url+'create_admin',
+			url: api_url+'register_user',
 			data:{
                 'user_id':$cookies.get('user_id'),
 				'hash':$cookies.get('hash'),
