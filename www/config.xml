@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
+        id        = "com.localeph.locale"
         version   = "1.0.0">
 
-    <name>HaynakuPh</name>
+    <name>LocalePH</name>
 
     <description>
-        App Used for seeing and posting ads online
+        Know events happening around you.
     </description>
 
-    <author href="http://cydd.website" email="cyddalupan@icloud.com">
-        Cyd Dalupan
+    <author href="http://localeph.com" email="nanagas.paolo@gmail.com">
+        Frankensite
     </author>
 
     <!-- Define the main entry-point to the application -->
