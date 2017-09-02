@@ -1,6 +1,9 @@
-app.controller('editLocaleadminController', function($scope, $http, $cookies, $location, $routeParams) {
+app.controller('editLocaleadminController', function($scope, $http, $cookies, $location, $routeParams, screenSize) {
     $scope.$parent.hideNav = 1;
 	$scope.locale_admin = $routeParams.locale_admin;
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
     // Check if user is logged
     if ($cookies.get('user_type_id') < 2){
 		//user is correct

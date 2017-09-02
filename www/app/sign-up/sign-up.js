@@ -1,6 +1,7 @@
 app.controller('appsignUpController', function($scope, $location, $http) {
     $scope.$parent.hideNav = 1;
     $scope.register = '';
+	$scope.$parent.isDesktop = 0;
 
 
     $scope.register_user = function(){

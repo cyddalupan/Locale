@@ -1,7 +1,10 @@
-app.controller('addEventadminController', function($scope, $http, $cookies, $location) {
+app.controller('addEventadminController', function($scope, $http, $cookies, $location, screenSize) {
     $scope.$parent.hideNav = 1;
 	$scope.event = [];
 	$scope.msg = '';
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
     
     // Check if user is logged
     if ($cookies.get('user_type_id') < 3){
@@ -40,7 +43,7 @@ app.controller('addEventadminController', function($scope, $http, $cookies, $loc
 	}
 
 	//Save host Function
-    $scope.addEvent = function () {
+    $scope.addEvent = function (event_id) {
        $http({
 			method: 'POST',
 			url: api_url+'create_event',
@@ -51,7 +54,7 @@ app.controller('addEventadminController', function($scope, $http, $cookies, $loc
 				'event_name':$scope.event.event_name,
 				'img_url':$scope.event.img_url,
 				'short_description':$scope.event.short_description,
-				'long_description':$scope.event.long_description,
+				'long_description':$scope.event.long_desc.description,
 				'category_id':$scope.event.category_id,
 				'host_id':$scope.event.host_id,
 				'position_sort':$scope.event.position_sort,

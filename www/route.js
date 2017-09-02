@@ -1,5 +1,5 @@
 // create the module and name it app
-var app = angular.module('app', ['ngRoute','ngCookies']);
+var app = angular.module('app', ['ngRoute','ngCookies','matchMedia','angularRipple']);
 
 // configure our routes
 app.config(function($routeProvider) {

@@ -4,6 +4,7 @@ app.controller('appsingleViewController', function($scope, $http, $cookies, $loc
     $scope.event = '';
     $scope.host = '';
     $scope.modalExit = 0;
+	$scope.$parent.isDesktop = 0;
 
     $scope.modalView = function() {
         $scope.modalExit = 0;

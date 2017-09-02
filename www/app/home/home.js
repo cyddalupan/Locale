@@ -1,6 +1,7 @@
 app.controller('homeController', function($scope, $http, $cookies, $location) {
 	$scope.$parent.hideNav = 0;
 	$scope.events = '';
+	$scope.$parent.isDesktop = 0;
     
 	// Check if user is logged
     if ($cookies.get('user_type_id') <= 4){

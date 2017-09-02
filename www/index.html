@@ -21,6 +21,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-material-design.min.css" rel="stylesheet">
         <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/ripple2.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link href="app/sign-up/sign-up.css" rel="stylesheet">
         <link href="app/single-view/single-view.css" rel="stylesheet">
@@ -62,6 +63,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+    <div ng-if="isDesktop" ng-include="'app/cms/cmshome/cmshome.html'" ng-controller="cmshomeController"></div>
     <body ng-controller="mainController">
         <div class="locale-header row" ng-hide="hideNav">
                 <div class="responsive-circle" ng-click="localSettings()">
@@ -119,6 +121,8 @@
         <script src="js/angular.min.js"></script>
         <script src="js/angular-cookies.min.js"></script>
         <script src="js/angular-route.js"></script>
+        <script src="js/match-media.js"></script>
+        <script src="js/angular-ripple.js"></script>
         <!--Route-->
         <script src="route.js"></script>
         <script src="main.js"></script>

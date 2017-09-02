@@ -1,7 +1,10 @@
-app.controller('editcategoriesadminController', function($scope, $http, $cookies, $location, $routeParams) {
+app.controller('editcategoriesadminController', function($scope, $http, $cookies, $location, $routeParams, screenSize) {
     $scope.category = '';
     $scope.category_id = $routeParams.category_id;
     $scope.$parent.hideNav = 1;
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
 
     //Check if user logged
     if ($cookies.get('user_type_id') < 3){

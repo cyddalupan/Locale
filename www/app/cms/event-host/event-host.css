@@ -129,3 +129,14 @@
     color: #fff;
     font-size: 26px;
 }
+@media screen and (min-width: 768px){
+    .host-admin-shell {
+        position: fixed;
+        display: block;
+        top:100px !important;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+    }
+}

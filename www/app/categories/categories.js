@@ -1,6 +1,6 @@
 app.controller('categoriesController', function($scope, $cookies, $http, $location) {
 	$scope.$parent.hideNav = 0;
-
+	$scope.$parent.isDesktop = 0;
 	// Check if user is logged
     if ($cookies.get('user_type_id') <= 4){
 		//user is correct

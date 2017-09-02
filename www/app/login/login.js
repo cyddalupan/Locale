@@ -2,6 +2,7 @@ app.controller('apploginController', function($scope, $http, $location, $cookies
    $scope.$parent.hideNav = 1;
    $scope.errormsg = '';
 
+   $scope.$parent.isDesktop = 0;
    $scope.loginS = function () {
        $http({
 			method: 'POST',

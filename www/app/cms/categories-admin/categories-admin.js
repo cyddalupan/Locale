@@ -1,7 +1,9 @@
-app.controller('categoriesadminController', function($scope, $http, $cookies) {
+app.controller('categoriesadminController', function($scope, $http, $cookies, screenSize) {
 	$scope.$parent.hideNav = 1;
 	$scope.categories = '';
-
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
     // Check if user is logged
     if ($cookies.get('user_type_id') < 3){
 		//user is correct

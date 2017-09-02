@@ -1,14 +1,15 @@
+<link href="css/cms-home-desktop.css" rel="stylesheet">
 <div class="categories-admin-shell">
 	<div class="category-titlebar">
-		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+		<a ng-hide="isDesktop" onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
 		<h2>CATEGORIES</h2>
 		<div class="add-category-admin search-all">
 			<a href="#/add-categories-admin">
 				<h5>Add Category</h5>
 				<i class="fa fa-plus-circle" aria-hidden="true"></i>
 			</a>
-			<input type="text" placeholder="SEARCH" ng-model="searchAll">
 		</div>
+		<div class="search-all"><input type="text" placeholder="SEARCH" ng-model="searchAll"></div>
 	</div>
 	<div class="category-admin-body-shell">
 	<div class="category-admin" >

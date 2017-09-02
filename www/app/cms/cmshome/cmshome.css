@@ -6,6 +6,9 @@
 	right: 0;
 	bottom: 0;
 	overflow: scroll;
+	z-index: 99999998;
+}
+.cms-home-holder {
 	z-index: 99999999;
 }
 .locale-home-menu {
@@ -17,9 +20,6 @@
 	position: relative;
   	height: 34vw;
 }
-.host-admin p {
-	padding-top: 7vw !important;
-}
 .locale-home-menu:after {
   	content: "";
   	display: block;
@@ -29,9 +29,79 @@
 	color: #fff;
 	text-align: center;
 	font-size: 6vw;
-	padding-top: 11.4vw;
+	top: 50%;
+	transform: translateY(-50%);
 	position: absolute;
 	width: 100%;
     left: 0;
     font-weight: bold;
+}
+::-webkit-scrollbar { 
+	display: none; 
+}
+.logout-cmshome {
+	cursor: pointer;
+}
+[angular-ripple] {
+    position: relative;
+    overflow: hidden;
+}
+.angular-ripple {
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 50%;
+    transform: scale(0);
+}
+.angular-ripple.animate {
+    animation: ripple 0.35s linear;
+}
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+@media screen and (min-width: 786px){
+	.cms-home-shell {
+		position: fixed;
+		display: block;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: scroll;
+		z-index: 99999999;
+	}
+	.cms-home-holder {
+		left: 50%;
+		transform: translateX(-50%);
+		position: relative;
+		width: 820px;
+		height: auto;
+		overflow: scroll;
+	}
+	.locale-home-menu {
+		display: inline-block;
+		text-align: center;
+		border-radius: 20%;
+		border: 5px solid #fff;
+		margin: 10px;
+		position: relative;
+		height: 200px;
+		width: 250px !important;
+		float: none !important;
+	}
+	.locale-home-menu:after {
+		  content: "";
+		  display: block;
+		  padding-bottom: 100%;
+	}
+	.locale-home-menu p {
+		font-size: 24px;
+		position: absolute;
+		width: 100%;
+		left: 0;
+	}
 }

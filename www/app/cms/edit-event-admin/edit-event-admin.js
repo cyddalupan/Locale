@@ -1,9 +1,13 @@
-app.controller('editEventadminController', function($scope, $http, $cookies, $location, $routeParams) {
+app.controller('editEventadminController', function($scope, $http, $cookies, $location, $routeParams, screenSize) {
     $scope.$parent.hideNav = 1;
 	$scope.event_id = $routeParams.event_id;
     $scope.eventHost = '';
 	$scope.eventCategory = '';
-    $scope.event = '';
+	$scope.event = '';
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
+	
     // Check if user is logged
     if ($cookies.get('user_type_id') < 3){
 		//user is correct

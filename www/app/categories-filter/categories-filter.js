@@ -2,6 +2,7 @@ app.controller('categoriesFilterController', function($scope, $http, $cookies, $
 	$scope.$parent.hideNav = 0;
 	$scope.events = '';
 	$scope.id = $routeParams.category_id;
+	$scope.$parent.isDesktop = 0;
 
 	$scope.eventCount = 1;
 	$( "#test" ).each(function( index ) {

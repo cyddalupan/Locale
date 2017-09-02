@@ -1,5 +1,6 @@
 app.controller('cmshomeController', function($scope, $location, $cookies, $http) {
     $scope.$parent.hideNav = 1;
+	$scope.$parent.isDesktop = 0;
 
     // Check if user is logged
     if ($cookies.get('user_type_id') < 4){

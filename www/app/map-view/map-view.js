@@ -3,6 +3,7 @@ app.controller('appmapViewController', function($scope, $http, $cookies, $locati
     $scope.mapEmbed = '';
 	$scope.host_id = $routeParams.host_id;
 
+	$scope.$parent.isDesktop = 0;
 	// Check if user is logged
     if ($cookies.get('user_type_id') <= 4){
 		//user is correct

@@ -1,6 +1,9 @@
-app.controller('addHostadminController', function($scope, $http, $cookies, $location) {
+app.controller('addHostadminController', function($scope, $http, $cookies, $location, screenSize) {
     $scope.$parent.hideNav = 1;
     $scope.host = '';
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
     // Check if user is logged
     if ($cookies.get('user_type_id') < 3){
 		//user is correct

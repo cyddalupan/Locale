@@ -97,6 +97,7 @@
   padding-top: 3vw; 
   margin: auto;
   display: block;
+  overflow: scroll;
 }
 .add-locale-admin-body a {
   font-size: 60px;
@@ -116,4 +117,14 @@
   top: 13px;
   left: 13px;
   font-size: 30px;
+}
+@media screen and (min-width: 768px){
+  .add-locale-admin-shell {
+    position:fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+  }  
 }

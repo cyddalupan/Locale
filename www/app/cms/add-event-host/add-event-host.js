@@ -1,7 +1,10 @@
-app.controller('addEventHostController', function($scope, $http, $cookies, $location) {
+app.controller('addEventHostController', function($scope, $http, $cookies, $location, screenSize) {
     $scope.$parent.hideNav = 1;
     $scope.mapEmbed = '';
 	$scope.host = '';
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
 	// Check if user is logged
     if ($cookies.get('user_type_id') < 4){
 		//user is correct
@@ -30,13 +33,12 @@ app.controller('addEventHostController', function($scope, $http, $cookies, $loca
 				'google_map_embed':$scope.host.google_map_embed
 			}
 		}).then(function successCallback(response) {
-
+            console.log(response)
             if (response.data.result == 'failed') {
                 $scope.msg = response.data.message;
             } else {
                 alert(response.data.message);
             }
-            console.log(response)
 		}, function errorCallback(response) {
 
 		});

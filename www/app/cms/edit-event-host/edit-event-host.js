@@ -1,7 +1,10 @@
-app.controller('editEventHostController', function($scope, $http, $cookies, $location, $routeParams) {
+app.controller('editEventHostController', function($scope, $http, $cookies, $location, $routeParams, screenSize) {
     $scope.$parent.hideNav = 1;
     $scope.mapEmbed = '';
 	$scope.host_id = $routeParams.host_id;
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
 
 	// Check if user is logged
     if ($cookies.get('user_type_id') < 4){

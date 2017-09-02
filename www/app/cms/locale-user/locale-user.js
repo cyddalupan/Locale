@@ -1,6 +1,9 @@
-app.controller('localeUserController', function($scope, $cookies, $location, $http) {
+app.controller('localeUserController', function($scope, $cookies, $location, $http, screenSize) {
     $scope.$parent.hideNav = 1;
     $scope.getAdmin = '';
+	$scope.$parent.isDesktop = screenSize.onChange($scope, 'md, sm, lg', function(isMatch){
+		$scope.isDesktop = isMatch;
+	});
 
     // Check if user is logged
     if ($cookies.get('user_type_id') < 3){
