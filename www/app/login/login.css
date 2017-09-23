@@ -197,3 +197,12 @@ input::placeholder {
         
     }
 }
+@media screen and (min-width: 768px){
+    .error-message {
+        font-size: 16px;
+    }
+    .error-message-shell {
+        top: 150px;
+        bottom: auto !important;
+    }
+}

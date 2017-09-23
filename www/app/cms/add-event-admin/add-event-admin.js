@@ -54,12 +54,12 @@ app.controller('addEventadminController', function($scope, $http, $cookies, $loc
 				'event_name':$scope.event.event_name,
 				'img_url':$scope.event.img_url,
 				'short_description':$scope.event.short_description,
-				'long_description':$scope.event.long_desc.description,
+				'long_description':'',
 				'category_id':$scope.event.category_id,
 				'host_id':$scope.event.host_id,
 				'position_sort':$scope.event.position_sort,
 				'event_date':$scope.event.event_date,
-				'is_featured':$scope.event.is_featured
+				'is_featured':0
 			}
 		}).then(function successCallback(response) {
 

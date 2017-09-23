@@ -1,5 +1,5 @@
 // create the module and name it app
-var app = angular.module('app', ['ngRoute','ngCookies','matchMedia','angularRipple']);
+var app = angular.module('app', ['ngRoute','routeStyles','ngCookies','matchMedia','angularRipple']);
 
 // configure our routes
 app.config(function($routeProvider) {
@@ -42,7 +42,8 @@ app.config(function($routeProvider) {
 		})
 		.when('/cms-home', {
 			templateUrl : 'app/cms/cmshome/cmshome.html',
-			controller  : 'cmshomeController'
+			controller  : 'cmshomeController',
+			css : 'app/cms/cmshome/cmshome.css'
 		})
 		.when('/categoriesadmin', {
 			templateUrl : 'app/cms/categories-admin/categories-admin.html',
@@ -125,3 +126,36 @@ app.config(function($routeProvider) {
 			controller  : 'cydMapController'
 		});
 });
+
+app.directive('head', ['$rootScope','$compile',
+function($rootScope, $compile){
+	return {
+		restrict: 'E',
+		link: function(scope, elem){
+			var html = '<link rel="stylesheet" ng-repeat="(routeCtrl, cssUrl) in routeStyles" ng-href="{{cssUrl}}" >';
+			elem.append($compile(html)(scope));
+			scope.routeStyles = {};
+			$rootScope.$on('$routeChangeStart', function (e, next) {
+				if(next && next.$$route && next.$$route.css){
+					if(!angular.isArray(next.$$route.css)){
+						next.$$route.css = [next.$$route.css];
+					}
+					angular.forEach(next.$$route.css, function(sheet){
+						scope.routeStyles[sheet] = sheet;
+					});
+				}
+			});
+			$rootScope.$on('$routeChangeSuccess', function(e, current, previous) {
+				if (previous && previous.$$route && previous.$$route.css) {
+					if (!angular.isArray(previous.$$route.css)) {
+						previous.$$route.css = [previous.$$route.css];
+					}
+					angular.forEach(previous.$$route.css, function (sheet) {
+						scope.routeStyles[sheet] = undefined;
+					});
+				}
+			});
+		}
+	};
+}
+]);

@@ -176,4 +176,7 @@
     bottom: 0;
     display: block;
   }
+  .add-host-locale-admin-body {
+    top: 90px;
+  }
 }

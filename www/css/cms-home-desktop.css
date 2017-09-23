@@ -30,15 +30,15 @@
 		top: 50%;
 		transform: translateY(-50%);
 	}
+	.locale-home-menu:after {
+		content: "";
+		display: block;
+		padding-bottom: 100%;
+ 	 }
 	.host-admin p {
 		position: relative;
 		padding-top: 0px !important;
 
-	}
-	.locale-home-menu:after {
-		  content: "";
-		  display: auto;
-		  padding-bottom: auto;
 	}
 	.locale-home-menu p {
 		color: #fff;
@@ -54,5 +54,8 @@
 	}
 	::-webkit-scrollbar { 
 		display: none; 
+	}
+	.logout-cmshome {
+		cursor: pointer;
 	}
 }

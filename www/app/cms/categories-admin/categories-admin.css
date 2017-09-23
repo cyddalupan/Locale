@@ -179,8 +179,8 @@
     .category-admin-body-shell{
         position: absolute;
         top:79px;
-        left: 0;
-        right: 0;
+        left: 22% !important;
+        right: 22% !important;
         bottom: 0px;
         overflow: scroll;
     }
@@ -190,22 +190,22 @@
     }
     .responsive-circle-category-admin i{
         position: absolute;
-        top: -3vw;
+        top: -2vw;
         right: 1vw;
         margin: auto;
         text-align: center;
-        font-size: 10vw;
+        font-size: 5vw;
         color: #fff;
     }
     .circle-inner-category-admin img {
         display:block;
         margin:10px auto;
         width: 40%;
-        height: 25vw;
+        height: 14vw;
     }
     .circle-inner-category-admin h4 {
         margin: 10% auto;
-        font-size: 2.5vw;
+        font-size: 2vw;
         font-weight: bold;
     }
     .responsive-circle-category-admin {

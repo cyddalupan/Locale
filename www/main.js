@@ -1,9 +1,7 @@
 app.controller('mainController', function($scope, $location, $http, $cookies, screenSize) {
 	$scope.hideNav = 0;
 	$scope.localSettings = false;
-	$scope.$parent.isDesktop = screenSize.onChange($scope, 'sm, md, lg', function(isMatch){
-		$scope.isDesktop = isMatch;
-	});
+	$scope.isDesktop = 0;
 
     if ($cookies.get('user_type_id') < 4){
 		$scope.adminOnly = 1

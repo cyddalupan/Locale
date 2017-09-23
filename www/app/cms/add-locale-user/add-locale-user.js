@@ -34,7 +34,7 @@ app.controller('addLocaleuserController', function($scope, $http, $cookies, $loc
             } else {
                 alert(response.data.message);
             }
-                console.log(response)
+            console.log(response)
 		}, function errorCallback(response) {
 
 		});

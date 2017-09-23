@@ -1,4 +1,4 @@
-app.controller('appsingleViewController', function($scope, $http, $cookies, $location, $routeParams, $window,$timeout) {
+app.controller('appsingleViewController', function($scope, $http, $cookies, $location, $routeParams, $window,$timeout,$filter) {
     $scope.$parent.hideNav = 1;
 	$scope.event_id = $routeParams.event_id;
     $scope.event = '';
@@ -33,9 +33,8 @@ app.controller('appsingleViewController', function($scope, $http, $cookies, $loc
         }
     }).then(function successCallback(response) {
         $scope.event = response.data.event;
-        
+        $scope.event.event_date = new Date($scope.event.event_date);
         $scope.getHost($scope.event.host_id);
-
     });
 
     $scope.getHost = function(bkbjkhbhb) {
