@@ -6,7 +6,7 @@
         id        = "com.frankensite.localePH"
         version   = "1.0.2"
         versionCode = "1">
-    <icon src="res/icon/ios/icon-1024.jpg"  width="1024" height="1024" />
+    <icon src="res/icon/ios/icon-1024.png"  width="1024" height="1024" />
     <name>LocalePH</name>
 
     <description>
