@@ -6,6 +6,9 @@
         id        = "com.frankensite.localePH"
         version   = "1.0.0"
 		versionCode = "1">
+    <preference name="phonegap-version" value="cli-7.1.1" />
+    <icon src="www/res/icon/ios/icon-1024.png" 
+    width="1024" height="1024" />
 
     <name>LocalePH</name>
 
