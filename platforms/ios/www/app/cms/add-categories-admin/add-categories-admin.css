@@ -1,0 +1,87 @@
+.add-categories-shell {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+.add-categories-titlebar {
+  position:relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+}
+.add-categories-titlebar h2 {
+  text-align: center;
+  font-size: 23px;
+  margin-top: 32px;
+}
+.add-categories-input input[type=text] {
+  height:17px;
+  border: 0;
+  width: 70%;
+  margin:35px auto;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+
+}
+.add-categories-input input[type=text]:focus {
+  outline: none;
+  box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
+}
+.add-categories-input input {
+  background: transparent !important;
+  display: block;
+  height: 100%;
+  padding: auto;
+  margin: 35px auto;
+  color: #fff !important;
+  text-align: center
+}
+.add-categories-body {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top:130px;
+  background-color: rgba(0, 0, 0, .4);
+  width: 100%;
+  margin: auto;
+  display: block;
+  padding-top: 20px;
+}
+.add-categories-body a {
+  font-size: 60px;
+  color: rgba(174, 213, 129, 1);
+  width: 100%;
+  margin: auto;
+}
+.ok-box {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+.back-button {
+  color: #fff;
+  position:absolute;
+  top: 13px;
+  left: 13px;
+  font-size: 30px;
+}
+@media screen and (min-width: 768px){
+  .add-categories-shell {
+    position:fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+  }  
+}

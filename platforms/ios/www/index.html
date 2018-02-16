@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+        <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />-->
+        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+        <title>App Title</title>
+        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+        <link rel="apple-touch-icon" href="img/favicon.png">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- Bootstrap -->
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-material-design.min.css" rel="stylesheet">
+        <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/ripple2.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="app/sign-up/sign-up.css" rel="stylesheet">
+        <link href="app/single-view/single-view.css" rel="stylesheet">
+        <link href="app/map-view/map-view.css" rel="stylesheet">
+        <link href="app/login/login.css" rel="stylesheet">
+        <link href="app/home/home.css" rel="stylesheet">
+        <link href="app/categories/categories.css" rel="stylesheet">
+        <link href="app/categories-filter/categories-filter.css" rel="stylesheet">
+        <link href="app/locale-settings/locale-settings.css" rel="stylesheet">
+        <link href="app/cms/locale-admin/locale-admin.css" rel="stylesheet">
+        <link href="app/cms/add-locale-user/add-locale-user.css" rel="stylesheet">
+        <link href="app/cms/add-locale-admin/add-locale-admin.css" rel="stylesheet">
+        <link href="app/cms/edit-locale-user/edit-locale-user.css" rel="stylesheet">
+        <link href="app/cms/edit-locale-admin/edit-locale-admin.css" rel="stylesheet">
+        <link href="app/cms/locale-user/locale-user.css" rel="stylesheet">
+        <link href="app/cms/categories-admin/categories-admin.css" rel="stylesheet">
+        <link href="app/cms/edit-event-admin/edit-event-admin.css" rel="stylesheet">
+        <link href="app/cms/add-event-admin/add-event-admin.css" rel="stylesheet">
+        <link href="app/cms/add-host-admin/add-host-admin.css" rel="stylesheet">
+        <link href="app/cms/add-event-host/add-event-host.css" rel="stylesheet">
+        <link href="app/cms/edit-event-host/edit-event-host.css" rel="stylesheet">
+        <link href="app/cms/event-host/event-host.css" rel="stylesheet">
+        <link href="app/cms/edit-event-host/edit-event-host.css" rel="stylesheet">
+        <link href="app/cms/edit-host-admin/edit-host-admin.css" rel="stylesheet">
+        <link href="app/cms/event-list-admin/event-list-admin.css" rel="stylesheet">
+        <link href="app/cms/host-admin/host-admin.css" rel="stylesheet">
+        <link href="app/cms/add-categories-admin/add-categories-admin.css" rel="stylesheet">
+        <link href="app/cms/edit-categories-admin/edit-categories-admin.css" rel="stylesheet">
+        <link href="css/cms-home-desktop.css" rel="stylesheet">
+        <!-- Page -->
+        <link href="app/cyd_test/cyd_test.css" rel="stylesheet">
+        <!-- Test Style -->
+        <link href="app/cyd_map/cyd_map.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <div ng-if="isDesktop" ng-include="'app/cms/cmshome/cmshome.html'" ng-controller="cmshomeController"></div>
+    <body ng-controller="mainController">
+        <div class="locale-header row" ng-hide="hideNav">
+                <div class="responsive-circle" ng-click="localSettings()">
+                    <div class="circle-inner"><span class="glyphicon glyphicon-cog settings-icon-locale-1" aria-hidden="true" id="!locale-settings-default" ng-hide="localsettingsActive"></span><i class="fa fa-times settings-icon-locale-1" id="locale-settings-close" aria-hidden="true" ng-show="localsettingsActive"></i></div>
+                </div>
+                <div class="admin-circle responsive-circle" ng-show="adminOnly">
+                    <a href="#/cms-home"><div class="circle-inner">A</div></a>
+                </div>
+            <h1>LOCALE</h1>
+        </div>
+        <div class="locale-body" ng-hide="hideNav" ng-class="{'locale-blur': localsettingsActive }">
+            <div class="search-locale-shell"><span class="glyphicon glyphicon-search search-icon-locale" aria-hidden="true"></span><input type="search" class="search-locale" id="i2" placeholder="Search" ng-model="searchAll"></div>
+            <nav class="navbar navbar-locale-handler row">
+                <div class="container-fluid-custom">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="locale-nav" id="bs-example-navbar-collapse-1">
+                        <a href="#/categories" class="col-xs-6"><img src="img/filter.svg" alt="category" class="locale-nav-button"></a>
+                        <a href="#/" class="col-xs-6"><img src="img/home.svg" alt="category" class="locale-nav-button"></a>
+                        <!--<a href="#/trend" class="col-xs-4"><img src="img/fire.svg" alt="category" class="locale-nav-button"></a>-->
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        <div class="locale-content-view" ng-class="{'locale-blur': localsettingsActive }">
+            <div class="container-fluid locale-content-view-2">
+                <!-- angular templating -->
+                <!-- this is where content will be injected -->
+                    <div ng-view></div>
+                </div>
+        </div>
+
+        <div class="setting-background row" ng-show="localsettingsActive">
+            <div class="setting-shell row">
+                <h3>SETTINGS</h3>
+                <a class="setting-menu"><p>Notification and Sound</p></a></br>
+                <a class="setting-menu"><p>Help</p></a></br>
+                <a class="setting-menu"><p>About</p></a></br>
+                <a class="setting-menu"><p>Acount</p></a></br>
+                <a ng-click="logoutAll()" class="setting-menu"><p>Logout</p></a></br>
+            </div>
+        </div>
+    </div>
+
+        <!--Installs-->
+        <script>
+            api_url = 'http://localeph.com/api/public/';
+        </script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/material.min.js"></script>
+        <script src="js/ripples.min.js"></script>
+        <script type="text/javascript">
+            $.material.init();
+        </script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-cookies.min.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/match-media.js"></script>
+        <script src="js/angular-ripple.js"></script>
+        <script src="js/angular-sanitize.min.js"></script>
+        <!--Route-->
+        <script src="route.js"></script>
+        <script src="main.js"></script>
+        <script src="ng-pinch-zoom.js"></script>
+        <!--Controllers-->
+        <script src="app/home/home.js"></script>
+        <script src="app/categories/categories.js"></script>
+        <script src="app/categories-filter/categories-filter.js"></script>
+        <script src="app/trend/trend.js"></script>
+        <script src="app/single-view/single-view.js"></script>
+        <script src="app/map-view/map-view.js"></script>
+        <script src="app/sign-up/sign-up.js"></script>
+        <script src="app/login/login.js"></script>
+        <script src="app/locale-settings/locale-settings.js"></script>
+        <script src="app/cms/cmshome/cmshome.js"></script>
+        <script src="app/cms/host-admin/host-admin.js"></script>
+        <script src="app/cms/locale-admin/locale-admin.js"></script>
+        <script src="app/cms/edit-locale-user/edit-locale-user.js"></script>
+        <script src="app/cms/edit-locale-admin/edit-locale-admin.js"></script>
+        <script src="app/cms/add-host-admin/add-host-admin.js"></script>
+        <script src="app/cms/edit-host-admin/edit-host-admin.js"></script>
+        <script src="app/cms/add-event-admin/add-event-admin.js"></script>
+        <script src="app/cms/edit-event-admin/edit-event-admin.js"></script>
+        <script src="app/cms/add-locale-admin/add-locale-admin.js"></script>
+        <script src="app/cms/add-locale-user/add-locale-user.js"></script>
+        <script src="app/cms/locale-user/locale-user.js"></script>
+        <script src="app/cms/event-list-admin/event-list-admin.js"></script>
+        <script src="app/cms/event-host/event-host.js"></script>
+        <script src="app/cms/edit-event-host/edit-event-host.js"></script>
+        <script src="app/cms/add-event-host/add-event-host.js"></script>
+        <script src="app/cms/categories-admin/categories-admin.js"></script>
+        <script src="app/cms/add-categories-admin/add-categories-admin.js"></script>
+        <script src="app/cms/edit-categories-admin/edit-categories-admin.js"></script>
+        <script src="app/cyd_test/cyd_test.js"></script>
+        <script src="app/cyd_map/cyd_map.js"></script>
+        <script src="js/route-styles.js"></script>
+    </body>
+</html>

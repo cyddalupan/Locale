@@ -1,0 +1,130 @@
+.add-locale-admin-shell {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+.add-locale-admin-titlebar {
+  position:relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+}
+.add-locale-admin-titlebar h2{
+  display: block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: calc(20px + 2vw);
+}
+.add-locale-admin-input {
+  background-color: rgba(255, 255, 255, .1);
+  width: 58%;
+  margin: 0px auto;
+  padding: .2vw 0 0 0;
+}
+.add-locale-admin-input input:focus {
+  outline: none;
+  box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
+}
+.add-locale-admin-input input {
+  background: transparent !important;
+  display: block;
+  padding: 0px;
+  color: #fff !important;
+  height:100%;
+  border: 0;
+  font-size: 12px;
+  margin:3vw auto;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+.input-imgurl {
+  position: relative;
+  height: 18vw;
+  background-color: rgba(255, 255, 255, .1);
+  width: 58%;
+  margin: 0px auto;
+  padding: .2vw 0 0 0;
+  display: block;
+}
+.input-imgurl input {
+  background: transparent !important;
+  display: block;
+  padding: 0px;
+  color: #fff !important;
+  height:100%;
+  border: 0;
+  font-size: 3vw;
+  margin:auto;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+.input-imgurl input:focus {
+  outline: none;
+  box-shadow: 0px 4px 0px 0px #4EA6EA, 0px 4px 0px 0px #4EA6EA;
+}
+.add-profile-image {
+  background-color: #fff;
+  height: 16vw;
+  width: 16vw;
+  position: absolute;
+  right: 2px;
+  top: 1vw;
+}
+.add-profile-image img {
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.add-locale-admin-body {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top:130px;
+  background-color: rgba(0, 0, 0, .4);
+  width: 100%;
+  padding-top: 3vw; 
+  margin: auto;
+  display: block;
+  overflow: scroll;
+}
+.add-locale-admin-body a {
+  font-size: 60px;
+  color: rgba(174, 213, 129, 1);
+  width: 100%;
+  margin: auto;
+}
+.ok-box {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+.back-button {
+  color: #fff;
+  position:absolute;
+  top: 13px;
+  left: 13px;
+  font-size: 30px;
+}
+@media screen and (min-width: 768px){
+  .add-locale-admin-shell {
+    position:fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+  }  
+}

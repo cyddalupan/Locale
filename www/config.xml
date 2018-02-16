@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.frankensite.localePH"
-        version   = "1.0.4"
+        version   = "1.0.5"
         versionCode = "1">
     <name>LocalePH</name>
 
@@ -29,10 +29,6 @@
 
     <!-- Plugins -->
     <!-- Core plugins -->
-    <plugin name="cordova-plugin-camera">
-       <param name="CAMERA_USAGE_DESCRIPTION" value="We are using the Camera for something..." />
-       <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We are using the Photo Library for something..." />
-    </plugin>
     <plugin name="cordova-plugin-battery-status"      source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera"              source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-media-capture"       source="npm" spec="~1.2.0" />
@@ -172,5 +168,8 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-
+    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+        <string>This app requires access to the photo library.</string>
+    </edit-config>
+    <icon height="1024" src="../icon.png" width="1024" />
 </widget>

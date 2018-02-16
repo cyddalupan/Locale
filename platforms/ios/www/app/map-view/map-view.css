@@ -1,0 +1,31 @@
+.locale-map-view{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: block;
+}
+.locale-map-view-shell {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 70px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.map-view-frame iframe {
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute !important;
+    display: block !important;
+    margin: auto !important;
+}
+.map-view-frame img {
+    width: 100% !important;
+    position: absolute !important;
+    display: block !important;
+    top:36%;
+    margin: auto !important;
+}

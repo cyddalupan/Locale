@@ -1,0 +1,25 @@
+<div class="event-admin-shell">
+	<div class="locale-titlebar">
+		<a onclick="history.back(-1)" class="back-button"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+		<h2>EVENTS</h2>
+		<div class="event-list-admin search-all">
+			<a href="#/add-event-admin">
+				<h5>Create Event</h5>
+				<i class="fa fa-plus-circle" aria-hidden="true"></i>
+			</a>
+			<input type="text" placeholder="SEARCH" ng-model="searchAll">
+		</div>
+	</div>
+	<div class="event-admin-list-shell">
+		<div class="row modified-row-locale">
+			<div class="{{event.class}}" ng-repeat="event in events | filter:searchAll">
+				<img class="event-list-image" ng-src="{{event.img_url}}" alt="">
+				<p>{{$index + 1}}.{{event.event_name}}</p>
+				<i class="fa fa-caret-up up-arrow" aria-hidden="true"></i>
+				<a href="#/edit-event-admin/{{event.id}}"><i class="fa fa-pencil-square-o edit-button-events" aria-hidden="true"></i></a>
+				<i ng-click="deleteEvent(event.id)" class="fa fa-trash-o delete-button-events" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,43 @@
+<div class="locale-single-view" ng-class="{'locale-blur': modalDisplay }">
+    <a onclick="history.back(-1)" class="single-view-back"><img src="img/back-arrow.png" alt=""></a>
+    <div class="locale-single-view-logo"> <img src="img/locale-logo-white.png" alt=""></div>
+        <div class="scrollable-shell">
+            <a ng-click="modalView()"><div class="locale-single-view-image"><img ng-class="{'locale-blur': showDate }" ng-src="{{event.img_url}}" alt=""></div></a>
+            <div class="date-handler" ng-class="{'showdate': showDate }">
+                <div class="month-year-shell">
+                    <h2>{{event.event_date | date: 'MMMM'}} {{event.event_date | date: 'y'}}</h2>
+                </div>
+                <div class="date-shell">
+                    <h1>{{event.event_date | date: 'dd'}}</h1>
+                </div>
+            </div>
+            <nav class="navbar navbar-locale-handler-single-view row">
+                <div class="container-fluid-custom-single-view">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="locale-nav-single-view" id="bs-example-navbar-collapse-1">
+                        <a href="" class="col-xs-4"><i class="fa fa-share" aria-hidden="true"></i></a>
+                        <a href="#/map-view/{{host.id}}" class="col-xs-4"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                        <a href="" ng-click="showDate = !showDate" class="col-xs-4"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <div class="single-view-host-img"><img ng-src="{{host.img_url}}" alt=""></div>
+            <a ng-click="changeSiteFacebook()" ng-if="host.facebook" class="facebook-circle non-responding-circle">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a  ng-click="changeSiteInstagram()" ng-if="host.instagram"class="instagram-circle non-responding-circle">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a ng-click="changeSiteTwitter()" ng-if="host.twitter" class="twitter-circle non-responding-circle">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <div class="single-view-descrition">
+                <h5>{{host.name}}</h5>
+                <p>{{host.short_description}}</p>
+            </div>
+        </div>
+</div>
+<div class="locale-modal" ng-class="{'modal-display' : modalDisplay, 'hidenow' : modalExit}">
+    <img ng-src="{{event.img_url}}" alt="" ng-pinch-zoom max-scale="4">
+    <i class="fa fa-times settings-icon-locale-1" id="locale-settings-close" aria-hidden="true" ng-show="modalDisplay" ng-click="modalHide()"></i>
+</div>

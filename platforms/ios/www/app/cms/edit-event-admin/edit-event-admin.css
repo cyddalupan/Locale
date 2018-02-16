@@ -1,0 +1,188 @@
+.add-event-admin-titlebar {
+  position:relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+}
+.add-event-admin-titlebar h2{
+  display: block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: calc(20px + 2vw);
+}
+.add-event-admin-input {
+  background-color: rgba(255, 255, 255, .1);
+  width: 58%;
+  margin: 0px auto 10px auto !important;
+  padding: 1px 0 1px 0 !important;
+  position: relative;
+  display: block;
+}
+.add-event-admin-input input:focus {
+  outline: none;
+  box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;
+}
+.add-event-admin-input input {
+  background: transparent !important;
+  display: block;
+  padding: 0px;
+  color: #fff !important;
+  height: 25px !important;
+  border: 0;
+  font-size: 3vw;
+  margin:0px auto !important;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+.input-imgurl {
+  position: relative;
+  height: 18vw;
+  background-color: rgba(255, 255, 255, .1);
+  width: 58%;
+  margin: 0px auto;
+  padding: .2vw 0 0 0;
+  display: block;
+}
+.input-imgurl input {
+  background: transparent !important;
+  display: block;
+  padding: 0px;
+  color: #fff !important;
+  height:100%;
+  border: 0;
+  font-size: 3vw;
+  margin:auto;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+.input-imgurl input:focus {
+  outline: none;
+  box-shadow: 0px 4px 0px 0px #4EA6EA, 0px 4px 0px 0px #4EA6EA;
+}
+.add-profile-image {
+  background-color: #fff;
+  height: 16vw;
+  width: 16vw;
+  position: absolute;
+  right: 2px;
+  top: 1vw;
+}
+.add-profile-image img {
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.add-event-admin-body {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top:130px;
+  background-color: rgba(0, 0, 0, .4);
+  width: 100%;
+  padding-top: 3vw; 
+  margin: auto;
+  display: block;
+  overflow: scroll;
+}
+.add-event-admin-body a {
+  font-size: 60px;
+  color: rgba(174, 213, 129, 1);
+  width: 100%;
+  margin: auto;
+}
+.ok-box {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+.back-button {
+  color: #fff;
+  position:absolute;
+  top: 13px;
+  left: 13px;
+  font-size: 30px;
+}
+
+select {
+  margin: 10px auto 10px auto;
+  border: 1px solid #111;
+  background: transparent;
+  width: 95% !important;
+  font-size: 3.5vw;
+  border: 1px solid #ccc;
+  height: 10vw;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../../../img/dropdown.ico) 96% / 15% no-repeat #333;
+  display: block;
+}
+.checkboxThree input {
+  visibility: hidden !important;
+}
+.checkboxThree {
+	width: 120px;
+	height: 40px;
+	background: #333;
+	margin: 30px auto 10px auto;
+	border-radius: 50px;
+	position: relative;
+}
+.checkboxThree:before {
+	content: 'Yes';
+	position: absolute;
+	top: 12px;
+	left: 13px;
+	height: 2px;
+	color: #26ca28;
+	font-size: 16px;
+}
+.checkboxThree:after {
+	content: 'No';
+	position: absolute;
+	top: 12px;
+	left: 84px;
+	height: 2px;
+	color: #ff0000;
+	font-size: 16px;
+}
+.checkboxThree label {
+	display: block;
+	width: 52px;
+	height: 22px;
+	border-radius: 50px;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 9px;
+	z-index: 1;
+	left: 12px;
+	background: #ff0000;;
+}
+.checkboxThree input[type=checkbox]:checked + label {
+	left: 60px !important;
+	background: #26ca28 !important;
+}
+.add-event-admin-input h5 {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.event-select-image {
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
