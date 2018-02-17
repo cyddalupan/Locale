@@ -1,1 +1,0 @@
-api_url = 'http://localhost/locale/www/#/about';

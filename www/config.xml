@@ -6,6 +6,7 @@
         id        = "com.frankensite.localePH"
         version   = "1.0.5"
         versionCode = "1">
+    <icon src="res/icon/ios/icon-1024.png"  width="1024" height="1024" />
     <name>LocalePH</name>
 
     <description>
@@ -168,8 +169,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
-        <string>This app requires access to the photo library.</string>
-    </edit-config>
-    <icon height="1024" src="../icon.png" width="1024" />
+
 </widget>
