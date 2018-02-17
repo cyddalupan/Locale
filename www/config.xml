@@ -4,19 +4,16 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.frankensite.localePH"
-        version   = "1.0.5"
+        version   = "1.0.6"
         versionCode = "1">
-    <icon src="res/icon/ios/icon-1024.png"  width="1024" height="1024" />
+    <icon src="res/ios/icon-1024.png" width="1024" height="1024" />
     <name>LocalePH</name>
-
     <description>
         Know events happening around you.
     </description>
-
     <author href="http://localeph.com" email="nanagas.paolo@gmail.com">
         Frankensite
     </author>
-
     <!-- Define the main entry-point to the application -->
     <content src="index.html" />
 
@@ -75,7 +72,6 @@
     </platform>
 
     <platform name="ios">
-        <icon src="res/icon/ios/icon-1024.jpg"                      platform="ios" width="1024" height="1024" />
         <icon   src="res/icon/ios/icon.png"                         platform="ios" width="57"   height="57" />
         <icon   src="res/icon/ios/icon@2x.png"                      platform="ios" width="114"  height="114" />
         <icon   src="res/icon/ios/icon-40.png"                      platform="ios" width="40"   height="40" />
