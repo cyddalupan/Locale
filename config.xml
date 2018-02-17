@@ -27,7 +27,7 @@
 
     <!-- Plugins -->
     <!-- Core plugins -->
-    <icon src="www/res/ios/icon-1024.png" width="1024" height="1024" />
+    <icon src="www/res/icon/ios/icon-1024.png" width="1024" height="1024" />
     <preference name="phonegap-version"       value="cli-8.0.0" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.4.1" />
