@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.frankensite.localePH"
-        version   = "1.0.12"
+        version   = "1.0.13"
 		versionCode = "1">
     <preference name="phonegap-version"       value="cli-7.1.0" />
     <icon src="www/res/icon/ios/icon-1024.png" width="1024" height="1024" />
@@ -131,12 +131,10 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <platform name="ios">
-        <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
-            <string>We are using the Photo Library for something.</string>
-        </edit-config>
-        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-            <string>We are using the Camera for something.</string>
-        </edit-config>
-    </platform>
+    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+        <string>We are using the Photo Library for something.</string>
+    </edit-config>
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+        <string>We are using the Camera for something.</string>
+    </edit-config>
 </widget>
